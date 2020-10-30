@@ -1,16 +1,19 @@
 import axios from "axios";
 
 const UNADOPCION_API_URL = "http://localhost:8080";
-const CONTROLADOR = "/denunciarmaltrato";
+const CONTROLADOR = "/denunciar-maltrato";
 
 class RegistrarDenunciaServicio {
     registrarDenuncia(info){
         return axios.post(UNADOPCION_API_URL + CONTROLADOR, {
-            nombre:info.nombre,
-            tipo:info.tipo,
-            descripcion:info.descripcion,
+            nombreUsuario:info.nombreUsuario,
+            animalId:info.animalId,
+            denunTipo:info.denunTipo,
+            denunDescrip:info.denunDescrip,
+            detalles:info.detalles
         });
     }
 }
+
 
 export default new RegistrarDenunciaServicio();
