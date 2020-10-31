@@ -2,14 +2,6 @@
   <!--<h1>SECCION DE DENUNCIAS</h1>-->
   <div id="denuncia"><LoggedHeader></LoggedHeader>
 
-    <br><div></div>
-    <br><div class="container">
-      <div class="col-sm-10">
-        <h1 class="text-left">Nombre Mascota: PEPITO</h1>
-      </div>
-    </div>
-
-
     <br><div class="container">
       <div class="row justify-content-center"></div>
       <div class="card">
@@ -21,10 +13,19 @@
             <p style="text-align: left" class="text-info"> Seleccione los detalles del tipo de maltrato con el que se encuentra relacionada la mascota: </p>
           </div>
 
+
+            <div class="form-row">
+              <label class="control-label col-sm-2" for="nombreUsuario"><strong>Nombre Usuario a Denunciar:</strong></label>
+              <div class="col-sm-10">
+                <input required type="text" id="nombreUsuario" class="form-control" v-model="nombreUsuario">
+              </div>
+            </div>
+
+
             <br><div class="form-row">
-            <strong class="control-label col-sm-2" for="animalTipo">Tipo de Maltrato:</strong>
+            <strong class="control-label col-sm-2" for="denunTipo">Tipo de Maltrato:</strong>
             <div class="col-sm-10">
-              <select class="browser-default custom-select" v-model="tipo" required>
+              <select class="browser-default custom-select" id="denunTipo" v-model="denunTipo" required>
                 <option selected></option>
                 <option>Abandono</option>
                 <option>Maltrato Físico</option>
@@ -37,9 +38,9 @@
           </div>
 
             <br><div class="form-row">
-            <strong class="control-label col-sm-2" for="animalTipo">Estado final:</strong>
+            <strong class="control-label col-sm-2" for="estadofinal">Estado final:</strong>
             <div class="col-sm-10">
-              <select class="browser-default custom-select" v-model="estadofinal" required>
+              <select class="browser-default custom-select" id="estadofinal" v-model="estadofinal" required>
                 <option selected></option>
                 <option>Herido</option>
                 <option>Lesión Temporal</option>
@@ -50,9 +51,9 @@
           </div>
 
             <br><div class="form-row">
-            <strong class="control-label col-sm-2" for="animalTipo">Testigo:</strong>
+            <strong class="control-label col-sm-2" for="testigo">Testigo:</strong>
             <div class="col-sm-10">
-              <select class="browser-default custom-select" v-model="testigo" required>
+              <select class="browser-default custom-select" id="testigo" v-model="testigo" required>
                 <option selected></option>
                 <option>Presencial</option>
                 <option>Virtual</option>
@@ -62,6 +63,13 @@
             </div>
           </div>
 
+            <br><div class="form-row">
+              <label class="control-label col-sm-2" for="detalles"><strong>Detalles:</strong></label>
+              <div class="col-sm-10">
+                <input required type="text" id="detalles" class="form-control" v-model="detalles">
+              </div>
+            </div>
+
           </form>
         </div>
       </div>
@@ -70,7 +78,7 @@
 
     <br><button class="btn btn-success" @click="formaEnviar">Enviar</button>
 
-    <footer><Footer></Footer></footer>
+    <footer><br><Footer></Footer></footer>
   </div>
 </template>
 
@@ -92,22 +100,31 @@ export default {
 
   data() {
     return {
-      nombre:'pepe' ,
-      tipo: '',
-      estadofinal: '',
+      nombreUsuario: '',
+      animailId: 4,
+      denunTipo: '',
+      estadofinal:'',
       testigo: '',
-      descripcion: '',
+      denunDescrip: '',
+      detalles: ''
     }
+
+
+
+
+
   },
   methods: {
     formaEnviar(e) {
       e.preventDefault();
       let objectoActual = this;
-      this.descripcion = "El estado final de la mascota fue " + this.estadofinal + " y la persona fue testigo " + this.testigo;
+      this.denunDescrip = "El estado final de la mascota fue " + this.estadofinal + " y la persona fue testigo " + this.testigo;
       let info = {
-        nombre: this.nombre,
-        tipo: this.tipo,
-        descripcion: this.descripcion,
+        nombreUsuario: this.nombreUsuario,
+        animailId: this.animailId,
+        denunTipo: this.denunTipo,
+        denunDescrip: this.denunDescrip,
+        detalles: this.detalles
       }
       console.log(info),
       this.registrarDenuncia(objectoActual, info);
