@@ -20,38 +20,27 @@
             <button  class="btn btn-success" @click="editarUsuario">Editar Usuario</button>
             <br>
             </div>
+         <BuscarUsuario id="buscarusuario"></BuscarUsuario>
        <div><br></div></div>
+
+
       </div>
-
-    <div><br></div>
-    <div><br></div>
-    <div><br></div>
-    <div><br></div>
-    <div><br></div>
-
-    <br><div card>
-        <div class="form-row">
-
-          <strong class="text-nowrap">Nombre de usuario:</strong>
-          <label class="control-label col-sm-2"><input type="text" class="control-label col-sm-8" v-model="nombre"></label>
-          <button class="btn btn-success" @click="enviarForma">Buscar Usuario</button>
-        </div>
 
 
     <footer><Footer></Footer></footer>
-    </div>
   </div>
 </template>
 
 <script>
 import LoggedHeader from "@/components/LoggedHeader";
 import Footer from "@/components/Footer";
-import MostarPerfil from "@/servicio/MostarPerfil";
+import MostarPerfil from "@/servicio/MostarPerfilServicio";
+import BuscarUsuario from "@/components/BuscarUsuario";
 
 export default {
   name: "Inicio",
   components:{
-    LoggedHeader, Footer
+    LoggedHeader, Footer, BuscarUsuario
   },
    data(){
     return{
@@ -94,7 +83,7 @@ footer,
 
 body{
   width: 97.5%;
-  position: absolute;
+  position: relative;
 }
 
 footer{
@@ -102,4 +91,8 @@ footer{
   align-self: auto;
 }
 
+#buscarusuario{
+  position: relative;
+  margin-top: 10%;
+}
 </style>

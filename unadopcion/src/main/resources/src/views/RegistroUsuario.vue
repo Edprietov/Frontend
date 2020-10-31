@@ -11,6 +11,8 @@
             <form @submit="enviarForma">
               <br><strong>Nombre de usuario:</strong>
               <input required type="text" class="form-control" v-model="nombre">
+              <br><strong>Tu Nombre:</strong>
+              <input placeholder="Ej:Juan Hernandez" required type="text" class="form-control" v-model="nombreReal">
               <br><strong>Correo:</strong>
               <input required type="text" class="form-control" v-model="correo">
               <br><strong>Teléfono:</strong>
@@ -49,6 +51,7 @@ export default {
   data() {
     return {
       nombre: '',
+      nombreReal:'',
       correo: '',
       telefono:'',
       contrasena: '',

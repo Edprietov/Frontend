@@ -12,6 +12,7 @@ import EditarUsuario from "@/views/EditarUsuario";
 import Inicio from "@/views/Inicio";
 
 
+
 Vue.use(Router);
 
 export default new Router({
