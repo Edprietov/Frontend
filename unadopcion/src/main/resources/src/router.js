@@ -9,6 +9,7 @@ import Contacto from "@/views/Contacto";
 import BusquedaMascota from "@/views/BusquedaMascota";
 import Logeo from "@/views/Logeo";
 import EditarUsuario from "@/views/EditarUsuario";
+import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 
 
@@ -70,6 +71,11 @@ export default new Router({
             path: "/inicio",
             name: "inicio",
             component: Inicio
+        },
+        {
+            path: "/adoptar",
+            name: "adoptar",
+            component: Adoptar
         },
     ]
 })
