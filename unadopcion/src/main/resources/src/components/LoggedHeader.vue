@@ -23,6 +23,9 @@
             <a class="nav-link" href="denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="cuidados">Cuidados</a>
           </li>
           <!--<li class="nav-item">

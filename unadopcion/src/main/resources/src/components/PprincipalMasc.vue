@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="row">
-                    <button type="button" class="btn btn-primary">Adoptar</button>
+                    <a href="adoptar" class="btn btn-primary">Adoptar</a>
                 </div>
             </div>
 
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="row">
-                    <button type="button" class="btn btn-primary">Adoptar</button>
+                    <a href="adoptar" class="btn btn-primary">Adoptar</a>
                 </div>
             </div>
 
@@ -79,7 +79,7 @@
                     </div>
 
                     <div class="row">
-                        <button type="button" class="btn btn-primary">Adoptar</button>
+                        <a href="adoptar" class="btn btn-primary">Adoptar</a>
                     </div>
                 </div>
 

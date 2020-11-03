@@ -11,6 +11,8 @@ import Logeo from "@/views/Logeo";
 import EditarUsuario from "@/views/EditarUsuario";
 import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
+import MisAdopciones from "@/views/MisAdopciones";
+
 
 
 
@@ -76,6 +78,11 @@ export default new Router({
             path: "/adoptar",
             name: "adoptar",
             component: Adoptar
+        },
+        {
+            path: "/mis-adopciones",
+            name: "misadopciones",
+            component: MisAdopciones
         },
     ]
 })
