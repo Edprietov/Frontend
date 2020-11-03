@@ -17,9 +17,8 @@
     </div>
     <table class="table">
       <thead>
+        <th scope="col"># Denuncia</th>
         <th scope="col">Id Mascota</th>
-        <th scope="col">Id Usuario Implicado</th>
-        <th scope="col">Denuncia</th>
         <th scope="col">Fecha</th>
         <th scope="col">Tipo</th>
         <th scope="col">Descripción</th>
@@ -27,9 +26,8 @@
       </thead>
       <tbody>
         <tr v-for="valor in servidorDatos" :key="valor.id">
-          <td>{{ valor.animalId }}</td>
-          <td>{{ valor.usuarioId }}</td>
           <td>{{ valor.denunId }}</td>
+          <td>{{ valor.animalId }}</td>
           <td>{{ valor.denunFecha }}</td>
           <td>{{ valor.denunTipo }}</td>
           <td>{{ valor.denunDescrip }}</td>
