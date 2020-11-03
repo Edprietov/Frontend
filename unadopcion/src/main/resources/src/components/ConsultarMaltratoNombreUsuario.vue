@@ -54,8 +54,8 @@ export default {
       e.preventDefault();
       this.buscarUsuario(this.nombreUsuario);
     },
-    buscarUsuario(id) {
-      Consultar.ConsultarPorId(id)
+    buscarUsuario(nombreUsuario) {
+      Consultar.ConsultarPorNombre(nombreUsuario)
         .then((respuesta) => {
           if (respuesta.status === 200) {
             this.servidorDatos = respuesta.data;
@@ -72,7 +72,7 @@ export default {
   },
   name: "ConsultarMaltratoNombreUsuario",
   mounted() {
-    console.log("Componente BuscarUsuario OK.");
+    console.log("Componente Buscar Maltrato por usuario OK.");
   },
 };
 </script>

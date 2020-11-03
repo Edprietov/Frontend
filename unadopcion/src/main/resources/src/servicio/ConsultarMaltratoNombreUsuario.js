@@ -6,7 +6,7 @@ const CONTROLADOR = "/consultar-maltrato/usuario/";
 
 class ConsultarMaltratoNombreUsuario{
     ConsultarPorNombre(nombre){
-        return axios.post(UNADOPCION_API_URL + CONTROLADOR + nombre);//enviar como variable en URL
+        return axios.get(UNADOPCION_API_URL + CONTROLADOR + nombre);//enviar como variable en URL
     }
 }
 
