@@ -12,6 +12,8 @@ import EditarUsuario from "@/views/EditarUsuario";
 import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
+import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
+
 
 
 
@@ -48,6 +50,11 @@ export default new Router({
             path: "/denuncia",
             name: "denuncia",
             component: Denuncia
+        },
+        {
+            path: "/consultar-maltrato",
+            name: "consultarmaltrato",
+            component: ConsultarMaltratoNombreUsuario
         },
         {
             path: "/cuidados",
