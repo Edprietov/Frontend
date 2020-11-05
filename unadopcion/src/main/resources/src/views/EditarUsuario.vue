@@ -1,11 +1,12 @@
 <template>
-  <div id="registrousuario" onload="">
+  <div id="registrousuario">
     <!--@private byte[] usuarioFoto;-->
     <Header></Header>
-    <div class="container">
-      <br />
-      <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+      <div class="col-7">
+        <br />
+        <!-- primer carta-->
+        <div class="col-8">
           <div class="card">
             <div class="card-header">
               <b>EU Edita tu información para manternos al día!</b>
@@ -15,14 +16,29 @@
               <form @submit="enviarDatos">
                 <div class="row">
                   <div class="col-4">
+                    <strong>Nickname:</strong>
+                  </div>
+                  <div class="col-8">
+                    <input
+                      type="text"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="nombre"
+                    />
+                  </div>
+                </div>
+                <br />
+
+                <div class="row">
+                  <div class="col-4">
                     <strong>Nombre de usuario:</strong>
                   </div>
                   <div class="col-8">
                     <input
-                        type="text"
-                        class="form-control"
-                        @change="comprobarFormato"
-                        v-model="nombre"
+                      type="text"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="nombreReal"
                     />
                   </div>
                 </div>
@@ -34,10 +50,10 @@
                   </div>
                   <div class="col-8">
                     <input
-                        type="password"
-                        class="form-control"
-                        @change="comprobarFormato"
-                        v-model="contrasena"
+                      type="password"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="contrasena"
                     />
                   </div>
                 </div>
@@ -49,10 +65,10 @@
                   </div>
                   <div class="col-8">
                     <input
-                        type="password"
-                        class="form-control"
-                        @change="comprobarFormato"
-                        v-model="contrasena2"
+                      type="password"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="contrasena2"
                     />
                   </div>
                 </div>
@@ -64,9 +80,9 @@
                   </div>
                   <div class="col-8">
                     <select
-                        class="form-control form-control-sm"
-                        @change="comprobarFormato"
-                        v-model="rol"
+                      class="form-control form-control-sm"
+                      @change="comprobarFormato"
+                      v-model="rol"
                     >
                       <option>Cuidador</option>
                       <option>Adoptante</option>
@@ -82,10 +98,10 @@
                   </div>
                   <div class="col-8">
                     <input
-                        type="text"
-                        class="form-control"
-                        @change="comprobarFormato"
-                        v-model="correo"
+                      type="text"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="correo"
                     />
                   </div>
                 </div>
@@ -97,10 +113,10 @@
                   </div>
                   <div class="col-8">
                     <input
-                        type="text"
-                        class="form-control"
-                        @change="comprobarFormato"
-                        v-model="telefono"
+                      type="text"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="telefono"
                     />
                   </div>
                 </div>
@@ -112,10 +128,10 @@
                   </div>
                   <div class="col-8">
                     <input
-                        type="text"
-                        class="form-control"
-                        @change="comprobarFormato"
-                        v-model="lugar"
+                      type="text"
+                      class="form-control"
+                      @change="comprobarFormato"
+                      v-model="lugar"
                     />
                   </div>
                 </div>
@@ -135,7 +151,11 @@
                   <div class="col-12">
                     <div class="text-right">
                       <button class="btn btn-danger mr-4">Cancelar</button>
-                      <button class="btn btn-success" id="Aceptar" @click="enviarDatos">
+                      <button
+                        class="btn btn-success"
+                        id="Aceptar"
+                        @click="enviarDatos"
+                      >
                         Aceptar
                       </button>
                     </div>
@@ -151,13 +171,27 @@
               </div>
               <br />
               <strong
-              >Datos actualizados nos permiten mantenerte seguro.</strong
+                >Datos actualizados nos permiten mantenerte seguro.</strong
               >
             </div>
           </div>
         </div>
       </div>
+      <!-- Segunda carta-->
+      <div class="col-4">
+        <br />
+        <div class="card">
+          <div class="card-header">¡Añade una imagen!</div>
+          <div class="card-body">
+            <br /><strong class="control-label col-sm-2">Fotografia:</strong>
+            <div class="col-sm-10">
+              <input required type="file" @change="enCambioArchivo" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
     <br />
     <Footer></Footer>
   </div>
@@ -166,12 +200,15 @@
 <script>
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import EditarUsuario from "../servicio/EditarUsuarioServicio"
+import EditarUsuario from "../servicio/EditarUsuarioServicio";
+import EditarUsuarioServicio from "../servicio/EditarUsuarioServicio";
+import swal from "sweetalert2";
 
 export default {
   data() {
     return {
       nombre: "",
+      nombreReal: "",
       contrasena: "",
       contrasena2: "",
       rol: "",
@@ -179,28 +216,69 @@ export default {
       telefono: "",
       lugar: "",
       info: "",
+      imagenSeleccionada: null,
+      datosServidor: "",
     };
   },
+  mounted() {
+    console.log("Componente RegistroUsuario OK.");
+  },
   methods: {
+    actualizarDatos() {
+      EditarUsuarioServicio.ActualizarUsuario(this.nombre)
+        .then((respuesta) => {
+          if (respuesta.status === 200) {
+            this.datosServidor = respuesta.data;
+            this.nombre = this.datosServidor.nombre;
+            this.contrasena = this.datosServidor.contrasena;
+            this.correo = this.datosServidor.correo;
+            this.telefono = this.datosServidor.telefono;
+          } else {
+            alert("Error");
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 400) {
+            alert("Pucha error:" + error.response.message);
+          }
+        });
+    },
+
     enviarDatos(e) {
       e.preventDefault();
       //diccionario para ser convertido en JSON
-      let infoAutenticar = {
+      let info = {
         nombre: this.nombre,
+        nombreReal: this.nombreReal,
         contrasena: this.contrasena,
         rol: this.rol,
         correo: this.correo,
         telefono: this.telefono,
         lugar: this.lugar,
         info: this.info,
+        imagenSeleccionada: this.imagenSeleccionada,
       };
-      this.editar(infoAutenticar);
+      this.editar(info);
     },
 
     editar(datos) {
-      EditarUsuario.EditarUsuario(datos).then((respuesta) => {
-        console.log(respuesta.data);
-      });
+      EditarUsuario.EditarUsuario(datos)
+        .then((respuesta) => {
+          if (respuesta.status === 200)
+            swal.fire("Registro exitoso", "Gracias por actualizar sus datos", "success");
+        })
+        .catch((error) => {
+          if (error.response.status == 409) {
+            swal.fire(
+              "Intente nuevamente",
+              "Conflicto de autenticación por favor inicie sesion nuevamente",
+              "error"
+            );
+          }
+        });
+    },
+    enCambioArchivo(event) {
+      this.imagenSeleccionada = event.target.files[0];
     },
     comprobarContrasena() {
       if (this.contrasena != this.contrasena2) {
@@ -213,22 +291,24 @@ export default {
     },
     comprobarDatos() {
       if (
-          this.nombre == "" ||
-          this.contrasena == "" ||
-          this.rol == "" ||
-          this.correo == "" ||
-          this.telefono == "" ||
-          this.lugar == ""
+        this.nombre == "" ||
+        this.contrasena == "" ||
+        this.rol == "" ||
+        this.correo == "" ||
+        this.nombreReal == "" ||
+        this.telefono == "" ||
+        this.lugar == ""
       ) {
         document.getElementById("alerta-error").style.display = "block";
         document.getElementById("Aceptar").disabled = true;
+        this.comprobarContrasena();
       } else {
         document.getElementById("alerta-error").style.display = "none";
         document.getElementById("Aceptar").disabled = false;
+        this.comprobarContrasena();
       }
     },
     comprobarFormato() {
-      this.comprobarContrasena();
       this.comprobarDatos();
     },
   },

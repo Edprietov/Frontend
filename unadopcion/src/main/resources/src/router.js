@@ -9,7 +9,12 @@ import Contacto from "@/views/Contacto";
 import BusquedaMascota from "@/views/BusquedaMascota";
 import Logeo from "@/views/Logeo";
 import EditarUsuario from "@/views/EditarUsuario";
+import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
+import MisAdopciones from "@/views/MisAdopciones";
+import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
+
+
 
 
 
@@ -47,6 +52,11 @@ export default new Router({
             component: Denuncia
         },
         {
+            path: "/consultar-maltrato",
+            name: "consultarmaltrato",
+            component: ConsultarMaltratoNombreUsuario
+        },
+        {
             path: "/cuidados",
             name: "cuidadosmascota",
             component: CuidadosMascota
@@ -71,6 +81,16 @@ export default new Router({
             name: "inicio",
             component: Inicio,
 
+        },
+        {
+            path: "/adoptar",
+            name: "adoptar",
+            component: Adoptar
+        },
+        {
+            path: "/mis-adopciones",
+            name: "misadopciones",
+            component: MisAdopciones
         },
     ]
 })
