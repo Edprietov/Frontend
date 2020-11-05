@@ -19,11 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-md-auto">
           <li class="nav-item" id="btnPrincipal">
-<<<<<<< HEAD
             <a class="nav-link" v-bind:href="/inicio/+this.$store.getters.getGoogleId" >Inicio</a>
-=======
-            <a class="nav-link" href="inicio">Inicio</a>
->>>>>>> 7a91523bad765951579a6a59e0524c518649e3d9
           </li>
           <li class="nav-item" id="btnRegisPet">
             <a class="nav-link" href="/registro-mascota">Registrar mascota</a>
@@ -35,21 +31,20 @@
             <a class="nav-link" href="/denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
-<<<<<<< HEAD
             <a class="nav-link" href="/cuidados">Cuidados</a>
-=======
-            <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+           <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="mis-adopciones">Consultar Maltrato</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cuidados">Cuidados</a>
->>>>>>> 7a91523bad765951579a6a59e0524c518649e3d9
-          </li>
+          </li>-->
           <!--<li class="nav-item">
             <a class="nav-link" href="contacto">Contactanos</a>
           </li>-->
+          </li>
+
         </ul>
       </div>
     </nav>

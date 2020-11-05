@@ -6,8 +6,7 @@
       <br><div class="container">
        <div class="card">
           <br><div class="mb-2">
-         <br><b-avatar src=" https://lh6.googleusercontent.com/-lYxiCfDgOWY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmPks8pKGH5u8GccRx4gSw_Lkg-0A/s96-c/photo.jpg
-" size="8rem"></b-avatar>
+         <br><b-avatar v-bind:src=datosServidor.usuarioUrlFoto size="8rem"></b-avatar>
           </div>
 
          <div class="text-info">
@@ -80,7 +79,7 @@ export default {
     this.googleid = this.$route.params.id;
     //alert("pordefecto?" + this.$store.getters.getGoogleId + " para asignar " + this.googleid);
     //guardar en store accesible a todos los componentes y persistente
-    this.$store.commit("actualizarGoogleId", this.googleid);
+    this.$store.commit("actualizarGoogleId", this.googleid); //Persistencia del usuario
     this.cargarPerfil(this.googleid);//hace llamado al API
 
   }
