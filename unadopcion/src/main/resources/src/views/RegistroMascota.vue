@@ -10,17 +10,7 @@
           <div class="card">
             <div class="card-body">
               <form class="text-left" id="formulario" @submit="formaEnviar">
-                <div class="card">
-                  <div class="card-header"><div class="text-center"><strong>Datos Usuario</strong></div></div>
-                  <div class="card-body">
-                    <div class="form-row">
-                      <label class="control-label col-sm-2" for="nombreUsuario"><strong> Usuario: </strong></label>
-                      <div class="col-sm-10">
-                        <input required type="text" id="nombreUsuario" class="form-control" v-model="nombreusuario">
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
 
                 <br><div class="card">
                 <div class="card-header"><div class="text-center"><strong>Datos Mascota</strong></div></div>
@@ -154,7 +144,7 @@ export default {
       let datos = new FormData();
       //diccionario para ser convertido en JSON
       let infoRegistro = {
-        nombreusuario: this.nombreusuario,
+        usuariogoogleid: this.$store.getters.getGoogleId, //la magia de store en accion
         animalnombre: this.animalnombre,
         animaltipo: this.animaltipo,
         animallugar: this.animallugar,

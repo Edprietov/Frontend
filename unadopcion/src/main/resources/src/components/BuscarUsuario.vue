@@ -16,7 +16,7 @@
       <tbody>
       <tr v-for="valor in servidorDatos" :key="valor.id" >
         <td>
-          <div>Foto</div>
+          <div><img id="google-foto" v-bind:src="valor.usuarioUrlFoto" /></div>
         <td>{{valor.usuarioNombreReal}}</td>
         <td>{{valor.usuarioEmail}}</td>
       </tr>
@@ -56,7 +56,7 @@ export default {
       BuscarUsuarioServicio.buscarPorNombre(nombre)
           .then(respuesta=>{
             if(respuesta.status === 200) {
-               console.log(respuesta.data);
+               //console.log(respuesta.data);alert("Yaaaay!!");
                objetoActual.servidorDatos = respuesta.data;
             }else{
               alert("Error");
@@ -77,4 +77,10 @@ export default {
 
 <style scoped>
 
+#google-foto{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+}
 </style>

@@ -23,27 +23,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bdaf030-1b8e-47f6-ab41-99830752ac81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion.log.2020-10-23.0.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion.log.2020-10-23.012549212666191.tmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/herramientas/JsonAPOJO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/pojo/FormaAdopcionPOJO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/pojo/NuevaMascotaPOJO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/pojo/NuevoUsuarioPOJO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/pojo/UsuarioLogeoPOJO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion.log" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/AdopcionControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/AdopcionControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/BusquedaAnimalControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/BusquedaAnimalControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/DenunciaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/DenunciaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/LogeoControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/LogeoControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/RegistroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/java/com/unadopcion/unadopcion/controladores/RegistroControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/BuscarUsuario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/BuscarUsuario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/LoggedHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/LoggedHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/BuscarMascotaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/BuscarMascotaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/BuscarUsuarioServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/BuscarUsuarioServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ContactoServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ContactoServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/EditarUsuarioServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/EditarUsuarioServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/MostarPerfilServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/MostarPerfilServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RealizarLogeoServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RealizarLogeoServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarDenunciaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarDenunciaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarMascotaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarMascotaServicio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarUsuarioServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarUsuarioServicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Logeo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Logeo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/BusquedaMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/BusquedaMascota.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Inicio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Inicio.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroMascota.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroUsuario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroUsuario.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,9 +55,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -88,7 +90,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Proyecto/Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -98,20 +100,19 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/unadopcion/src/main/resources/src/components" />
       <recent name="C:\Users\nano\Documents\IngesoftII\Proyecto 2.0\Backend\unadopcion\src\main\resources\src\components" />
       <recent name="C:\Users\nano\Documents\IngesoftII\Nueva carpeta\Backend\unadopcion\src\main\resources\src\views" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UnadopcionApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.serve">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,10 +140,40 @@
     <configuration name="UnadopcionApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="unadopcion" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.unadopcion.unadopcion.UnadopcionApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.App.vue (1)" />
+      <item itemvalue="JavaScript Debug.Denuncia.vue" />
+      <item itemvalue="JavaScript Debug.RegistroMascota.vue" />
+      <item itemvalue="JavaScript Debug.RegistroUsuario.vue" />
+      <item itemvalue="JUnit.All in unadopcion" />
+      <item itemvalue="npm.serve" />
+      <item itemvalue="Spring Boot.UnadopcionApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.Denuncia.vue" />
@@ -169,6 +200,14 @@
       <workItem from="1603177141038" duration="13012000" />
       <workItem from="1603218664675" duration="11409000" />
       <workItem from="1603499071314" duration="13776000" />
+      <workItem from="1604011634071" duration="6770000" />
+      <workItem from="1604092758289" duration="6827000" />
+      <workItem from="1604102619173" duration="2047000" />
+      <workItem from="1604162737568" duration="23000" />
+      <workItem from="1604162869154" duration="51271000" />
+      <workItem from="1604282345132" duration="15061000" />
+      <workItem from="1604440176599" duration="7350000" />
+      <workItem from="1604516664908" duration="19148000" />
     </task>
     <servers />
   </component>
@@ -191,47 +230,53 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="329" y="84" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603227265463">
+    <state x="320" y="32" width="1046" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604516758102">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="385" y="122" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603070912049" />
-    <state x="329" y="84" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1603227265463" />
+    <state x="320" y="32" width="1046" height="736" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1366.741@0.27.1366.741" timestamp="1604516758102" />
     <state x="491" y="84" width="374" height="633" key="#com.intellij.ide.util.MemberChooser" timestamp="1603500833457">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="491" y="84" width="374" height="633" key="#com.intellij.ide.util.MemberChooser/0.27.1366.741@0.27.1366.741" timestamp="1603500833457" />
+    <state x="575" y="205" width="525" height="423" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1604013752738">
+      <screen x="0" y="27" width="1366" height="741" />
+    </state>
+    <state x="575" y="205" width="525" height="423" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1366.741@0.27.1366.741" timestamp="1604013752738" />
     <state x="391" y="27" width="574" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603501120028">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="391" y="27" width="574" height="741" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.741@0.27.1366.741" timestamp="1603501120028" />
-    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603063776607">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="452" y="180" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604182130322">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603063776607" />
-    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1603240396060">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="452" y="180" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.741@0.27.1366.741" timestamp="1604182130322" />
+    <state x="495" y="186" width="424" height="491" key="FileChooserDialogImpl" timestamp="1604282557775">
+      <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603052949869" />
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom" timestamp="1603518335699">
+    <state x="495" y="186" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741@0.27.1366.741" timestamp="1604282557775" />
+    <state width="1320" height="181" key="GridCell.Tab.0.bottom" timestamp="1604533351961">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603071648433" />
-    <state width="1320" height="172" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1603518335699" />
-    <state width="1320" height="172" key="GridCell.Tab.0.center" timestamp="1603518335698">
+    <state width="1320" height="181" key="GridCell.Tab.0.bottom/0.27.1366.741@0.27.1366.741" timestamp="1604533351961" />
+    <state width="1320" height="181" key="GridCell.Tab.0.center" timestamp="1604533351959">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603071648432" />
-    <state width="1320" height="172" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1603518335698" />
-    <state width="1320" height="172" key="GridCell.Tab.0.left" timestamp="1603518335696">
+    <state width="1320" height="181" key="GridCell.Tab.0.center/0.27.1366.741@0.27.1366.741" timestamp="1604533351959" />
+    <state width="1320" height="181" key="GridCell.Tab.0.left" timestamp="1604533351956">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603071648432" />
-    <state width="1320" height="172" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1603518335696" />
-    <state width="1320" height="172" key="GridCell.Tab.0.right" timestamp="1603518335698">
+    <state width="1320" height="181" key="GridCell.Tab.0.left/0.27.1366.741@0.27.1366.741" timestamp="1604533351956" />
+    <state width="1320" height="181" key="GridCell.Tab.0.right" timestamp="1604533351960">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603071648433" />
-    <state width="1320" height="172" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1603518335698" />
+    <state width="1320" height="181" key="GridCell.Tab.0.right/0.27.1366.741@0.27.1366.741" timestamp="1604533351960" />
     <state width="1320" height="172" key="GridCell.Tab.1.bottom" timestamp="1603518335701">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
@@ -272,10 +317,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="301" y="75" key="SettingsEditor/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603054731496" />
-    <state x="395" y="182" width="672" height="585" key="search.everywhere.popup" timestamp="1603514644886">
+    <state x="395" y="182" width="672" height="585" key="search.everywhere.popup" timestamp="1604096405854">
       <screen x="0" y="27" width="1366" height="741" />
     </state>
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1603062168989" />
-    <state x="395" y="182" width="672" height="585" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1603514644886" />
+    <state x="395" y="182" width="672" height="585" key="search.everywhere.popup/0.27.1366.741@0.27.1366.741" timestamp="1604096405854" />
   </component>
 </project>

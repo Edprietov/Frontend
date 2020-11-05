@@ -8,15 +8,17 @@ import axios from 'axios'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import store from './store'
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
-
 Vue.use(axios)
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
+  store,
   /*render: h => h(App),*/
   render: function (h) { return h(App) }
 }).$mount('#app')

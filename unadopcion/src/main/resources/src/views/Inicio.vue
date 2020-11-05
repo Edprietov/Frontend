@@ -1,18 +1,19 @@
 <template>
   <div id="inicio"><LoggedHeader></LoggedHeader>
 
-    <br><h3>Bienvenido "{{ mostrarUsiario() }}"</h3>
+    <br><h3> Hola <strong>{{(datosServidor.usuarioNombreReal)}}</strong>  </h3>
 
       <br><div class="container">
        <div class="card">
           <br><div class="mb-2">
-         <br><b-avatar src="@/assets/profile.jpg" size="8rem"></b-avatar>
+         <br><b-avatar src=" https://lh6.googleusercontent.com/-lYxiCfDgOWY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucmPks8pKGH5u8GccRx4gSw_Lkg-0A/s96-c/photo.jpg
+" size="8rem"></b-avatar>
           </div>
 
          <div class="text-info">
-           <br><div>Usuario: name user</div>
-           <div>Ciudad: city</div>
-           <div>Acerca de mi: Aboutme</div>
+           <br><div>{{datosServidor.usuarioNombreReal}}</div>
+           <div>Lugar:{{datosServidor.usuarioLugar}}</div>
+           <div>Acerca de mi: {{datosServidor.usuarioDescript}}</div>
          </div>
 
          <div><br></div>
@@ -44,35 +45,44 @@ export default {
   },
    data(){
     return{
-      nameuser: 'Usuario',
-      nombre: '',
-      probar: ''
+
+      datosServidor: ''
     }
   },
   methods: {
-     mostrarUsiario(){
+     /*mostrarUsiario(){
        return this.nameuser
-     },
+     },*/
 
     editarUsuario(e){
       e.preventDefault();
       this.$router.push('editar-usuario');
     },
 
-    enviarForma(e) {
-      e.preventDefault();
-      let objectoActual = this;
+    cargarPerfil(googleId) {
 
-      this.mostrarPerfil(objectoActual, this.nombre);
+      let objectoActual = this;
+      this.mostrarPerfil(objectoActual, googleId);
     },
 
-    mostrarPerfil(objetoActual, info) {
-      MostarPerfil.mostrarPerfil(info)
+    mostrarPerfil(objetoActual, googleId) {
+      MostarPerfil.mostrarPerfil(googleId)
           .then(respuesta => {
-            objetoActual.probar = (respuesta.data);
+            objetoActual.datosServidor = (respuesta.data);
             console.log(respuesta.data);
+            //alert(this.$store.getters.getGoogleId)
+
           });
     }
+  },
+  created() {
+    //el googleid de usuario viene  el URL, identifica el usuario logeado
+    this.googleid = this.$route.params.id;
+    //alert("pordefecto?" + this.$store.getters.getGoogleId + " para asignar " + this.googleid);
+    //guardar en store accesible a todos los componentes y persistente
+    this.$store.commit("actualizarGoogleId", this.googleid);
+    this.cargarPerfil(this.googleid);//hace llamado al API
+
   }
 }
 </script>

@@ -67,9 +67,10 @@ export default new Router({
             component: EditarUsuario
         },
         {
-            path: "/inicio",
+            path: "/inicio/:id",
             name: "inicio",
-            component: Inicio
+            component: Inicio,
+
         },
     ]
 })

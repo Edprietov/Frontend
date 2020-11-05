@@ -92,10 +92,12 @@ export default {
       BuscarMascotaServicio.buscarPorTipo(this.tipo)
           .then(respuesta => {
             objetoActual.servidorDatos = (respuesta.data);
-
             console.log(respuesta.data);
           });
     }
+  },
+  created() {//verificar persistencia entre paginas
+    //alert(this.$store.getters.getGoogleId);
   }
 }
 </script>

@@ -16,8 +16,8 @@
       <li class="nav-item" id="btnRegisUser">
         <a class="nav-link" href="registro" >Registrarse</a>
       </li>
-      <li class="nav-item" id="btnLogUser">
-        <a class="nav-link" href="logeo" >Iniciar Sesión</a>
+      <li class="nav-item" id="btnGoogleLogUser">
+        <a class="nav-link" href="http://localhost:8080/autenticar">Iniciar con Google</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="contacto">Contactanos</a>
@@ -33,6 +33,11 @@ export default {
   name: "Header",
   props: {
     nombre: String,
+  },
+  methods:{
+    mimetodo(){
+
+    }
   }
 }
 

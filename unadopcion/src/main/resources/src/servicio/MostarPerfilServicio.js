@@ -1,13 +1,11 @@
 import axios from "axios";
 
-const UNADOPCION_API_URL = "http://localhost:8080";
-const CONTROLADOR = "/mostrar-perfil";
+const UNADOPCION_API_URL = "/api";
+const CONTROLADOR = "/mostrar-perfil/";
 
 class MostrarPerfil{
-    mostrarPerfil(nombreUsuario){
-        return axios.post(UNADOPCION_API_URL + CONTROLADOR, {
-            nombre:nombreUsuario//json con un campo
-        } );
+    mostrarPerfil(googleId){
+        return axios.post(UNADOPCION_API_URL + CONTROLADOR + googleId);
     }
 }
 
