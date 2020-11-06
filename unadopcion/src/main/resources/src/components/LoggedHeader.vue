@@ -19,32 +19,38 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-md-auto">
           <li class="nav-item" id="btnPrincipal">
-            <a class="nav-link" v-bind:href="/inicio/+this.$store.getters.getGoogleId" >Inicio</a>
+            <a
+              class="nav-link"
+              v-bind:href="/inicio/ + this.$store.getters.getGoogleId"
+              >Inicio</a
+            >
           </li>
           <li class="nav-item" id="btnRegisPet">
             <a class="nav-link" href="/registro-mascota">Registrar mascota</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href='/buscar-mascota'>Buscar Mascota</a>
+            <a class="nav-link" href="/buscar-mascota">Buscar Mascota</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cuidados">Cuidados</a>
-           <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+            <a class="nav-link" href="/consultar-maltrato"
+              >Consultar Maltrato</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="mis-adopciones">Consultar Maltrato</a>
+            <a class="nav-link" href="/cuidados">Cuidados</a>
+
+            <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cuidados">Cuidados</a>
           </li>-->
-          <!--<li class="nav-item">
+            <!--<li class="nav-item">
             <a class="nav-link" href="contacto">Contactanos</a>
           </li>-->
           </li>
-
         </ul>
       </div>
     </nav>

@@ -1,5 +1,6 @@
 <template>
   <div card>
+    <LoggedHeader></LoggedHeader>
     <div class="form-row">
       <label class="control-label col-sm-2" for="nombreUsuario"
         ><strong>Nombre Usuario a Consultar:</strong></label
@@ -35,17 +36,24 @@
         </tr>
       </tbody>
     </table>
+    <footer><br /><Footer></Footer></footer>
   </div>
 </template>
 
 <script>
 import Consultar from "@/servicio/ConsultarMaltratoNombreUsuario";
+import Footer from "./Footer";
+import LoggedHeader from "@/components/LoggedHeader";
 export default {
   data() {
     return {
       nombreUsuario: "",
       servidorDatos: "",
     };
+  },
+  components: {
+    LoggedHeader,
+    Footer,
   },
   methods: {
     enviarForma(e) {
@@ -76,4 +84,9 @@ export default {
 </script>
 
 <style>
+footer {
+  position: absolute;
+  bottom: 0.1cm;
+  align-self: auto;
+}
 </style>

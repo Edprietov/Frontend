@@ -1,11 +1,11 @@
 
 import axios from "axios";
 
-const UNADOPCION_API_URL = "http://localhost:8080";
+const UNADOPCION_API_URL = "/api";
 const CONTROLADOR = "/consultar-maltrato/usuario/";
 
-class ConsultarMaltratoNombreUsuario{
-    ConsultarPorNombre(nombre){
+class ConsultarMaltratoNombreUsuario {
+    ConsultarPorNombre(nombre) {
         return axios.get(UNADOPCION_API_URL + CONTROLADOR + nombre);//enviar como variable en URL
     }
 }
