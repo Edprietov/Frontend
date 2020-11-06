@@ -101,7 +101,7 @@
       </div>
     </div>
     <br /><br />
-    <footer><Footer></Footer></footer>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -137,7 +137,7 @@ export default {
         if (error.response.status === 401){
           this.mostrarLogeoFallido("Las credenciales no coinciden");//credenciales erroneas
         }else if(error.response.status === 404){
-          this.mostrarLogeoFallido("No se encuentra el usuario con esas credenciales");//no existe usuario
+          this.mostrarLogeoFallido("No se encuentran mascotas con este ID");//no existe id
         }else{
           this.mostrarLogeoFallido("Error de red");
         }

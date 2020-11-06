@@ -40,7 +40,7 @@
         </div>        
     </div>
     
-    <footer><Footer></Footer></footer>
+    <Footer></Footer>
   </div>
 </template>
 
