@@ -1,6 +1,6 @@
 <template>
   <div id="logeo">
-    <Header></Header>
+    <LoggedHeader></LoggedHeader>
     <br /><br />
     <div class="container">
       <div class="row justify-content-center">
@@ -107,7 +107,7 @@
 
 <script>
 import swal from "sweetalert2";
-import Header from "../components/Header";
+import LoggedHeader from "@/components/LoggedHeader";
 import Footer from "../components/Footer";
 import RealizarLogeoServicio from "../servicio/RealizarLogeoServicio";
 
@@ -150,7 +150,7 @@ export default {
   },
   name: "Logeo",
   components: {
-    Header,
+    LoggedHeader,
     Footer,
   },
   data() {
