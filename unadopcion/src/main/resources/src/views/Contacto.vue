@@ -24,7 +24,7 @@
           <div class="row form-group">
             <label class="col-sm-2 col-form-label" for="nombreUsuario">Nombre </label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nombreUsuario" placeholder="nombre" v-model="nombreusuario" required>
+              <input type="text" class="form-control" id="nombreUsuario" placeholder="nombre" v-model="contactoNombre" required>
             </div>
           </div>
 
@@ -32,7 +32,7 @@
           <div class="row form-group">
             <label class="col-sm-2 col-form-label" for="correoUsuario">Correo</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="correoUsuario" placeholder="correo" v-model="correousuario" required>
+              <input type="text" class="form-control" id="correoUsuario" placeholder="correo" v-model="contactoCorreo" required>
             </div>
           </div>
 
@@ -40,8 +40,11 @@
           <div class="row form-group">
             <label class="col-sm-2 col-form-label" for="tipoConsulta">Tipo consulta</label>
             <div class="col-sm-10">
-              <select class="custom-select" id="tipoConsulta" placeholder="tipo de consulta" v-model="tipoconsulta" required>
-                <option selected>Seleccione</option>
+              <select class="custom-select" id="tipoConsulta" placeholder="tipo de consulta" v-model="contactoTipo" required>
+                <option selected></option>
+                <option>Sugerencia</option>
+                <option>Reclamos</option>
+                <option>Felicitaciones</option>
               </select>
             </div>
           </div>
@@ -49,7 +52,7 @@
           <div class="row form-group">
             <label class="col-sm-2 col-form-label" for="celularUsuario">Celular</label>
             <div class="col-sm-10">
-              <input type="number" class="form-control" id="celularUsuario" placeholder="celular" v-model="celular" required>
+              <input type="number" class="form-control" id="celularUsuario" placeholder="celular" v-model="contactoCelular" required>
             </div>
           </div>
 
@@ -59,7 +62,7 @@
           <div class="row form-group">
             <label class="col-sm-2 col-form-label" for="consulta">Consulta</label>
             <div class="col-sm-10">
-              <textarea class="form-control" rows="6" id="consulta" placeholder="¿Cómo podemos ayudarle?" v-model="consulta" required></textarea>
+              <textarea class="form-control" rows="6" id="consulta" placeholder="¿Cómo podemos ayudarle?" v-model="contactoConsulta" required></textarea>
             </div>
           </div>
 
@@ -68,7 +71,7 @@
             </div>
             <div class="col-sm-3">
               <div class="container">
-                <button v-on:click="enviarDatos" type="button" class="btn btn-primary ">Enviar</button>
+                <button  class="btn btn-success" @click="enviarDatos">Enviar</button>
               </div>
             </div>
           </div>
@@ -124,20 +127,25 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import EnviarDatosConsulta from "@/servicio/ContactoServicio";
+import ContactoServicio from "@/servicio/ContactoServicio";
 
 export default {
   name: "Contacto",
   components: {
     Header, Footer
   },
+
+  mounted() {
+    console.log("Componente Registrar Contacto OK.");
+  },
+
   data() {
     return {
-      nombreusuario: '',
-      correousuario: '',
-      tipoconsulta: '',
-      celular: '',
-      consulta: '',
+      contactoNombre: "",
+      contactoCorreo: "",
+      contactoTipo: "",
+      contactoCelular: "",
+      contactoConsulta: "",
     }
   },
   methods:{
@@ -145,25 +153,23 @@ export default {
       e.preventDefault();
       let objectoActual = this;
       //diccionario para ser convertido en JSON
-      let infoEnvioDatos = {
-        nombre: this.nombre,
-        correousuario: this.correousuario,
-        tipoconsulta: this.tipoconsulta,
-        celular: this.celular,
-        consulta: this.consulta,
+      let info = {
+        contactoNombre: this.contactoNombre,
+        contactoCorreo: this.contactoCorreo,
+        contactoTipo: this.contactoTipo,
+        contactoCelular: this.contactoCelular,
+        contactoConsulta: this.contactoConsulta,
       };
-
-      this.enviar(objectoActual, infoEnvioDatos);
+      console.log(info), this.enviarDatosContacto(objectoActual, info);
     },
 
-    enviar(objetoActual, datos) {
-      EnviarDatosConsulta.envioDatos(datos).then((respuesta) => {
+    enviarDatosContacto(objetoActual, info) {
+      ContactoServicio.enviarDatosContacto(info).then((respuesta) => {
         objetoActual.probar = respuesta.data;
         console.log(respuesta.data);
       });
     },
-  }
-
-}
+  },
+};
 </script>
 
