@@ -21,9 +21,7 @@
           <li class="nav-item" id="btnPrincipal">
             <a class="nav-link" href="principal">Principal</a>
           </li>
-          <li class="nav-item" id="btnRegisUser">
-            <a class="nav-link" href="registro">Registrarse</a>
-          </li>
+
           <li class="nav-item" id="btnGoogleLogUser">
             <a class="nav-link" href="http://localhost:8080/autenticar"
               >Iniciar con Google</a

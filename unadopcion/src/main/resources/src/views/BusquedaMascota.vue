@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <LoggedHeader></LoggedHeader> <br />
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-header"><strong>Busca una mascota</strong></div>
 
-            <div class="card-body">
-              <form @submit="enviarForma">
-                <!-- <strong>Buscar</strong>
-              <input type="text" class="form-control" v-model="tipo">
-              <button class="btn btn-success">Buscar</button>-->
+
+  <div><LoggedHeader></LoggedHeader>
+  <br><div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header"><b>Busca una mascota</b></div>
+
+          <div class="card-body">
+            <form @submit="enviarForma">
+
+
 
                 <select class="form-control" @change="enCambio($event)">
                   <option selected>Selecciona una categoria</option>
@@ -87,15 +87,13 @@ export default {
       let objetoActual = this;
       this.buscarMascota(objetoActual);
     },
-    adoptarMascota(mascota) {
-      swal.fire(
-        "Puedes adoptar a " + mascota.animNombre,
-        "Falta implementar backend",
-        "success"
-      );
-      //alert("Adoptar mascota " + mascota.animNombre);
+
+    adoptarMascota(mascota){
+     // swal.fire("Puedes adoptar a " + mascota.animNombre, "Falta implementar backend", "success")
+      this.confirmarAdopcion(mascota);
+
     },
-    enCambio(event) {
+    enCambio(event){
       let objetoActual = this;
       this.tipo = event.target.value;
       this.buscarMascota(objetoActual);
@@ -103,16 +101,40 @@ export default {
     },
 
     buscarMascota(objetoActual) {
+
       BuscarMascotaServicio.buscarPorTipo(this.tipo).then((respuesta) => {
         objetoActual.servidorDatos = respuesta.data;
         console.log(respuesta.data);
       });
     },
+    confirmarAdopcion(mascota){
+      swal.fire({
+        title:"Puedes adoptar a " + mascota.animNombre,
+        showCancelButton: true,
+        confirmButtonText: 'Si lo quiero!!',
+        cancelButtonText: 'Seguir buscando',
+      }).then((resultado)=>{
+        if(resultado.isConfirmed){
+          //guardar foto persistente
+          this.$store.commit("actualizarFotoFuturoAdoptado", mascota.animFoto);
+          //ir a formulario
+          this.$router.push("/solicitud");
+        }else{
+          //hacer nada
+        }
+      })
+
+    }
   },
   created() {
     //verificar persistencia entre paginas
-    //alert(this.$store.getters.getGoogleId);
-  },
+      BuscarMascotaServicio.buscarPorTipo(this.tipo)
+          .then(respuesta => {
+            this.objetoActual.servidorDatos = (respuesta.data);
+            console.log(respuesta.data);
+          });
+    }
+
 };
 </script>
 

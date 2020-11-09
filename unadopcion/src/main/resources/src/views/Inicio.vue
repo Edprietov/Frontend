@@ -1,45 +1,35 @@
 <template>
-  <div id="inicio">
-    <LoggedHeader></LoggedHeader>
 
-    <br />
-    <h3>
-      Hola <strong>{{ datosServidor.usuarioNombreReal }}</strong>
-    </h3>
+  <div id="inicio"><LoggedHeader></LoggedHeader>
 
-    <br />
-    <div class="container">
-      <div class="card">
-        <br />
-        <div class="mb-2">
-          <br /><b-avatar
-            v-bind:src="datosServidor.usuarioUrlFoto"
-            size="8rem"
-          ></b-avatar>
-        </div>
+    <br><h3> Hola <strong>{{(datosServidor.usuarioNombreReal)}}</strong>  </h3>
 
-        <div class="text-info">
-          <br />
-          <div>{{ datosServidor.usuarioNombreReal }}</div>
-          <div>Lugar:{{ datosServidor.usuarioLugar }}</div>
-          <div>Acerca de mi: {{ datosServidor.usuarioDescript }}</div>
-        </div>
+      <br><div class="container">
+       <div class="card">
+          <br><div class="mb-2">
+         <br><b-avatar v-bind:src=datosServidor.usuarioUrlFoto size="8rem"></b-avatar>
+          </div>
 
-        <div><br /></div>
-        <br />
-        <div class="text-center">
-          <button class="btn btn-success" @click="editarUsuario">
-            Editar Usuario
-          </button>
-          <br />
-        </div>
-        <BuscarUsuario id="buscarusuario"></BuscarUsuario>
-        <div><br /></div>
+         <div class="text-info">
+           <br><div>{{datosServidor.usuarioNombreReal}}</div>
+           <div><strong>Lugar: </strong>{{datosServidor.usuarioLugar}}</div>
+           <div><strong>Acerca de mi: </strong>{{datosServidor.usuarioInfo}}</div>
+         </div>
+
+         <div><br></div>
+          <br><div class="text-center">
+            <button  class="btn btn-success" @click="editarUsuario">Editar mi perfil</button>
+            <br>
+            </div>
+         <BuscarUsuario id="buscarusuario"></BuscarUsuario>
+       <div><br></div></div>
+
+      <Footer></Footer>
+
       </div>
+
     </div>
 
-    <footer><Footer></Footer></footer>
-  </div>
 </template>
 
 <script>
@@ -67,7 +57,9 @@ export default {
 
     editarUsuario(e) {
       e.preventDefault();
-      this.$router.push("editar-usuario");
+
+      this.$router.push('/editar-usuario');
+
     },
 
     cargarPerfil(googleId) {
@@ -84,14 +76,18 @@ export default {
     },
   },
   created() {
-    //el googleid de usuario viene  el URL, identifica el usuario logeado
-    this.googleid = this.$route.params.id;
+
+    //el googleid de usuario viene  en el URL, identifica el usuario logeado
+    this.googleid = this.$route.params.id;//coge el id directamente del URL
     //alert("pordefecto?" + this.$store.getters.getGoogleId + " para asignar " + this.googleid);
     //guardar en store accesible a todos los componentes y persistente
     this.$store.commit("actualizarGoogleId", this.googleid); //Persistencia del usuario
+
     this.cargarPerfil(this.googleid); //hace llamado al API
-  },
-};
+  }
+
+}
+
 </script>
 
 <style scoped>

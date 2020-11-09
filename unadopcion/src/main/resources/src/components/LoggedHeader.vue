@@ -35,14 +35,21 @@
             <a class="nav-link" href="/denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
+
             <a class="nav-link" href="/consultar-maltrato"
               >Consultar Maltrato</a
             >
+
+            <a class="nav-link" href="/cuidados">Cuidados</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/editar-usuario">Editar Perfil</a>
+           <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/cuidados">Cuidados</a>
 
-            <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+           <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cuidados">Cuidados</a>
@@ -65,3 +72,9 @@ export default {
   },
 };
 </script>
+
+
+<style>
+
+</style>
+

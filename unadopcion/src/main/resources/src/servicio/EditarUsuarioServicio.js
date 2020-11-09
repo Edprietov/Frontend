@@ -1,27 +1,20 @@
 import axios from "axios";
 const UNADOPCION_API_URL = "api";
-const CONTROLADOREDITAR = "/editar-usuario";
-const CONTROLADORBUSCAR = "/mostrar-perfil";
+const CONTROLADOR = "/editar-usuario";
+
 
 
 class EditarUsuarioServicio{
-    EditarUsuario(info){
-        return axios.post(UNADOPCION_API_URL + CONTROLADOREDITAR, {
-            nombre: info.nombre,
-            nombreReal: info.nombreReal,
-            correo: info.correo,
+    editarUsuario(info){
+        return axios.post(UNADOPCION_API_URL + CONTROLADOR, {
+            googleId: info.googleId,
             telefono: info.telefono,
-            contrasena: info.contrasena,
-            rol: info.rol,
             lugar: info.lugar,
-            info: info.info,
-            //imagen: info.imagenSeleccionada,
+            info: info.info
         });
     }
 
-    ActualizarUsuario(nombre){
-        return axios.post(UNADOPCION_API_URL + CONTROLADORBUSCAR, nombre);
-    }
+
 }
 
 export default new EditarUsuarioServicio();
