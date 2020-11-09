@@ -145,7 +145,7 @@ export default {
   data() {
     return {
       nombreUsuario: "",
-      animailId: 6,
+      animailId: "",
       denunTipo: "",
       estadofinal: "",
       testigo: "",

@@ -14,11 +14,26 @@
           v-model="nombreUsuario"
         />
       </div>
+      <strong class="control-label col-sm-2"> Id de la mascota:</strong>
+      <label class="control-label col-sm-2">
+        <input
+          type="number"
+          d="idMascota"
+          class="control-label col-sm-8"
+          v-model="idMascota"
+      /></label>
+      <label class="control-label col-sm-2" for="fecha"
+        ><strong>Fecha:</strong></label
+      >
+      <div class="col-sm-1">
+        <input type="date" id="fecha" class="form-control" v-model="fecha" />
+      </div>
+
       <button class="btn btn-success" @click="enviarForma">Consultar</button>
     </div>
     <table class="table">
       <thead>
-        <th scope="col"># Denuncia</th>
+        <th scope="col">#Denuncia</th>
         <th scope="col">Id Mascota</th>
         <th scope="col">Fecha</th>
         <th scope="col">Tipo</th>
@@ -41,13 +56,15 @@
 </template>
 
 <script>
-import Consultar from "@/servicio/ConsultarMaltratoNombreUsuario";
+import Consultar from "@/servicio/ConsultarMaltrato";
 import Footer from "./Footer";
 import LoggedHeader from "@/components/LoggedHeader";
 export default {
   data() {
     return {
       nombreUsuario: "",
+      idMascota: "",
+      fecha:"",
       servidorDatos: "",
     };
   },
@@ -58,12 +75,20 @@ export default {
   methods: {
     enviarForma(e) {
       e.preventDefault();
-      this.buscarUsuario(this.nombreUsuario);
+      let objectoActual = this;
+      let info = {
+        nombreUsuario: this.nombreUsuario,
+        idMascota: this.idMascota,
+        fecha: this.fecha,
+      };
+      console.log(info), this.ConsultarMaltratoTodo(objectoActual, info);
     },
-    buscarUsuario(nombreUsuario) {
-      Consultar.ConsultarPorNombre(nombreUsuario)
+    ConsultarMaltratoTodo(objetoActual, info) {
+      Consultar.ConsultarMaltrato(info)
         .then((respuesta) => {
           if (respuesta.status === 200) {
+            objetoActual.probar = respuesta.data;
+            console.log(respuesta.data);
             this.servidorDatos = respuesta.data;
           } else {
             alert("Error");
@@ -76,7 +101,7 @@ export default {
         });
     },
   },
-  name: "ConsultarMaltratoNombreUsuario",
+  name: "ConsultarMaltrato",
   mounted() {
     console.log("Componente Buscar Maltrato por usuario OK.");
   },
