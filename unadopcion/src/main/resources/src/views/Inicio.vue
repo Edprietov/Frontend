@@ -11,13 +11,13 @@
 
          <div class="text-info">
            <br><div>{{datosServidor.usuarioNombreReal}}</div>
-           <div>Lugar:{{datosServidor.usuarioLugar}}</div>
-           <div>Acerca de mi: {{datosServidor.usuarioDescript}}</div>
+           <div><strong>Lugar: </strong>{{datosServidor.usuarioLugar}}</div>
+           <div><strong>Acerca de mi: </strong>{{datosServidor.usuarioInfo}}</div>
          </div>
 
          <div><br></div>
           <br><div class="text-center">
-            <button  class="btn btn-success" @click="editarUsuario">Editar Usuario</button>
+            <button  class="btn btn-success" @click="editarUsuario">Editar mi perfil</button>
             <br>
             </div>
          <BuscarUsuario id="buscarusuario"></BuscarUsuario>
@@ -55,7 +55,7 @@ export default {
 
     editarUsuario(e){
       e.preventDefault();
-      this.$router.push('editar-usuario');
+      this.$router.push('/editar-usuario');
     },
 
     cargarPerfil(googleId) {
@@ -75,14 +75,16 @@ export default {
     }
   },
   created() {
-    //el googleid de usuario viene  el URL, identifica el usuario logeado
-    this.googleid = this.$route.params.id;
+
+    //el googleid de usuario viene  en el URL, identifica el usuario logeado
+    this.googleid = this.$route.params.id;//coge el id directamente del URL
     //alert("pordefecto?" + this.$store.getters.getGoogleId + " para asignar " + this.googleid);
     //guardar en store accesible a todos los componentes y persistente
     this.$store.commit("actualizarGoogleId", this.googleid); //Persistencia del usuario
     this.cargarPerfil(this.googleid);//hace llamado al API
 
-  }
+  },
+
 }
 </script>
 

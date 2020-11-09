@@ -9,9 +9,6 @@
           <div class="card-body">
             <form @submit="enviarForma">
 
-             <!-- <strong>Buscar</strong>
-              <input type="text" class="form-control" v-model="tipo">
-              <button class="btn btn-success">Buscar</button>-->
 
               <select class="form-control" @change="enCambio($event)" >
                 <option selected>Selecciona una categoria</option>
@@ -77,8 +74,9 @@ export default {
       this.buscarMascota(objetoActual);
     },
     adoptarMascota(mascota){
-      swal.fire("Puedes adoptar a " + mascota.animNombre, "Falta implementar backend", "success")
-      //alert("Adoptar mascota " + mascota.animNombre);
+     // swal.fire("Puedes adoptar a " + mascota.animNombre, "Falta implementar backend", "success")
+      this.confirmarAdopcion(mascota);
+
     },
     enCambio(event){
 
@@ -94,8 +92,27 @@ export default {
             objetoActual.servidorDatos = (respuesta.data);
             console.log(respuesta.data);
           });
-    }
+    },
+    confirmarAdopcion(mascota){
+      swal.fire({
+        title:"Puedes adoptar a " + mascota.animNombre,
+        showCancelButton: true,
+        confirmButtonText: 'Si lo quiero!!',
+        cancelButtonText: 'Seguir buscando',
+      }).then((resultado)=>{
+        if(resultado.isConfirmed){
+          //guardar foto persistente
+          this.$store.commit("actualizarFotoFuturoAdoptado", mascota.animFoto);
+          //ir a formulario
+          this.$router.push("/solicitud");
+        }else{
+          //hacer nada
+        }
+      })
+
+    },
   },
+
   created() {//verificar persistencia entre paginas
     //alert(this.$store.getters.getGoogleId);
   }

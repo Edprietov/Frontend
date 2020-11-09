@@ -32,6 +32,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/cuidados">Cuidados</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/editar-usuario">Editar Perfil</a>
            <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
           </li>
           <li class="nav-item">
@@ -61,4 +63,5 @@ export default {
 </script>
 
 <style>
+
 </style>

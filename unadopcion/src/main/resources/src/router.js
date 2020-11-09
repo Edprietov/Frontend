@@ -13,7 +13,7 @@ import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
-
+import LlenarSolicitud from "@/views/LlenarSolicitud";
 
 
 
@@ -86,6 +86,11 @@ export default new Router({
             path: "/adoptar",
             name: "adoptar",
             component: Adoptar
+        },
+        {
+            path: "/solicitud",
+            name: "solicitud",
+                component: LlenarSolicitud
         },
         {
             path: "/mis-adopciones",
