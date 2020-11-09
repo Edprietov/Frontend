@@ -7,7 +7,7 @@
       <input type="text" class="control-label col-sm-8" v-model="nombreusuario"></label>
     <button class="btn btn-success" @click="enviarForma">Buscar Usuario</button>
   </div>
-    <table class="table">
+    <table class="table" aria-describedby="buscarUsuario">
       <thead>
       <th scope="col">Foto</th>
       <th scope="col">Nombre</th>

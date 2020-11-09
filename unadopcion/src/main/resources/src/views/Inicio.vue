@@ -1,31 +1,42 @@
 <template>
-  <div id="inicio"><LoggedHeader></LoggedHeader>
+  <div id="inicio">
+    <LoggedHeader></LoggedHeader>
 
-    <br><h3> Hola <strong>{{(datosServidor.usuarioNombreReal)}}</strong>  </h3>
+    <br />
+    <h3>
+      Hola <strong>{{ datosServidor.usuarioNombreReal }}</strong>
+    </h3>
 
-      <br><div class="container">
-       <div class="card">
-          <br><div class="mb-2">
-         <br><b-avatar v-bind:src=datosServidor.usuarioUrlFoto size="8rem"></b-avatar>
-          </div>
+    <br />
+    <div class="container">
+      <div class="card">
+        <br />
+        <div class="mb-2">
+          <br /><b-avatar
+            v-bind:src="datosServidor.usuarioUrlFoto"
+            size="8rem"
+          ></b-avatar>
+        </div>
 
-         <div class="text-info">
-           <br><div>{{datosServidor.usuarioNombreReal}}</div>
-           <div>Lugar:{{datosServidor.usuarioLugar}}</div>
-           <div>Acerca de mi: {{datosServidor.usuarioDescript}}</div>
-         </div>
+        <div class="text-info">
+          <br />
+          <div>{{ datosServidor.usuarioNombreReal }}</div>
+          <div>Lugar:{{ datosServidor.usuarioLugar }}</div>
+          <div>Acerca de mi: {{ datosServidor.usuarioDescript }}</div>
+        </div>
 
-         <div><br></div>
-          <br><div class="text-center">
-            <button  class="btn btn-success" @click="editarUsuario">Editar Usuario</button>
-            <br>
-            </div>
-         <BuscarUsuario id="buscarusuario"></BuscarUsuario>
-       <div><br></div></div>
-
-
+        <div><br /></div>
+        <br />
+        <div class="text-center">
+          <button class="btn btn-success" @click="editarUsuario">
+            Editar Usuario
+          </button>
+          <br />
+        </div>
+        <BuscarUsuario id="buscarusuario"></BuscarUsuario>
+        <div><br /></div>
       </div>
-
+    </div>
 
     <footer><Footer></Footer></footer>
   </div>
@@ -39,40 +50,38 @@ import BuscarUsuario from "@/components/BuscarUsuario";
 
 export default {
   name: "Inicio",
-  components:{
-    LoggedHeader, Footer, BuscarUsuario
+  components: {
+    LoggedHeader,
+    Footer,
+    BuscarUsuario,
   },
-   data(){
-    return{
-
-      datosServidor: ''
-    }
+  data() {
+    return {
+      datosServidor: "",
+    };
   },
   methods: {
-     /*mostrarUsiario(){
+    /*mostrarUsiario(){
        return this.nameuser
      },*/
 
-    editarUsuario(e){
+    editarUsuario(e) {
       e.preventDefault();
-      this.$router.push('editar-usuario');
+      this.$router.push("editar-usuario");
     },
 
     cargarPerfil(googleId) {
-
       let objectoActual = this;
       this.mostrarPerfil(objectoActual, googleId);
     },
 
     mostrarPerfil(objetoActual, googleId) {
-      MostarPerfil.mostrarPerfil(googleId)
-          .then(respuesta => {
-            objetoActual.datosServidor = (respuesta.data);
-            console.log(respuesta.data);
-            //alert(this.$store.getters.getGoogleId)
-
-          });
-    }
+      MostarPerfil.mostrarPerfil(googleId).then((respuesta) => {
+        objetoActual.datosServidor = respuesta.data;
+        console.log(respuesta.data);
+        //alert(this.$store.getters.getGoogleId)
+      });
+    },
   },
   created() {
     //el googleid de usuario viene  el URL, identifica el usuario logeado
@@ -80,27 +89,23 @@ export default {
     //alert("pordefecto?" + this.$store.getters.getGoogleId + " para asignar " + this.googleid);
     //guardar en store accesible a todos los componentes y persistente
     this.$store.commit("actualizarGoogleId", this.googleid); //Persistencia del usuario
-    this.cargarPerfil(this.googleid);//hace llamado al API
-
-  }
-}
+    this.cargarPerfil(this.googleid); //hace llamado al API
+  },
+};
 </script>
 
 <style scoped>
-
-footer,
-
-body{
+body {
   width: 97.5%;
   position: relative;
 }
 
-footer{
+footer {
   bottom: 0.1cm;
   align-self: auto;
 }
 
-#buscarusuario{
+#buscarusuario {
   position: relative;
   margin-top: 10%;
 }

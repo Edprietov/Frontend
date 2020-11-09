@@ -1,5 +1,4 @@
 <template>
-  <!--<h1>SECCION DE DENUNCIAS</h1>-->
   <div id="denuncia">
     <LoggedHeader></LoggedHeader>
 
@@ -169,7 +168,7 @@ export default {
         denunDescrip: this.denunDescrip,
         detalles: this.detalles,
       };
-      console.log(info), this.registrarDenuncia(objectoActual, info);
+      console.log(info); this.registrarDenuncia(objectoActual, info);
     },
 
     registrarDenuncia(objetoActual, info) {

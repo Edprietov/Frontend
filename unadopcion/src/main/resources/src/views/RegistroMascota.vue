@@ -6,7 +6,9 @@
         <div class="col-md-8">
           <br />
           <div class="card">
-            <div class="card-header"><b>Registra una macota!</b></div>
+            <div class="card-header">
+              <strong>Registra una mascota!</strong>
+            </div>
           </div>
 
           <div class="card">

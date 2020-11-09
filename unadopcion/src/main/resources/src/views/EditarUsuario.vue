@@ -9,7 +9,7 @@
         <div class="col-8">
           <div class="card">
             <div class="card-header">
-              <b>EU Edita tu información para manternos al día!</b>
+              <strong>EU Edita tu información para manternos al día!</strong>
             </div>
 
             <div class="card-body">
@@ -265,7 +265,11 @@ export default {
       EditarUsuario.EditarUsuario(datos)
         .then((respuesta) => {
           if (respuesta.status === 200)
-            swal.fire("Registro exitoso", "Gracias por actualizar sus datos", "success");
+            swal.fire(
+              "Registro exitoso",
+              "Gracias por actualizar sus datos",
+              "success"
+            );
         })
         .catch((error) => {
           if (error.response.status == 409) {
@@ -319,6 +323,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

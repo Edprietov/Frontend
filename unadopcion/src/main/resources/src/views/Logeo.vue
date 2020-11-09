@@ -7,7 +7,7 @@
         <div class="col-md-8">
           <div class="card">
             <div class="card-header">
-              <b>¡Autenticate para obtener más beneficios!</b>
+              <strong>¡Autenticate para obtener más beneficios!</strong>
             </div>
 
             <div class="card-body">
@@ -18,7 +18,12 @@
                     <strong>Nombre de usuario:</strong>
                   </div>
                   <div class="col-8">
-                    <input required type="text" class="form-control" v-model="nombre" />
+                    <input
+                      required
+                      type="text"
+                      class="form-control"
+                      v-model="nombre"
+                    />
                   </div>
                 </div>
                 <br />
@@ -27,7 +32,8 @@
                     <strong>Contraseña:</strong>
                   </div>
                   <div class="col-8">
-                    <input required
+                    <input
+                      required
                       type="password"
                       class="form-control"
                       v-model="contrasena"
@@ -44,7 +50,9 @@
                     <button class="btn btn-danger mr-4">
                       Olvidé la Contraseña
                     </button>
-                    <button class="btn btn-success" @click="enviarDatos">Iniciar Sesion</button>
+                    <button class="btn btn-success" @click="enviarDatos">
+                      Iniciar Sesion
+                    </button>
                   </div>
                 </div>
               </div>
@@ -72,7 +80,7 @@ export default {
     enviarDatos(e) {
       e.preventDefault();
       let objectoActual = this;
-     // para ser convertido en JSON
+      // para ser convertido en JSON
       let info = {
         nombre: this.nombre,
         contrasena: this.contrasena,
@@ -80,26 +88,30 @@ export default {
 
       this.hacerLogeo(objectoActual, info);
     },
-    
-    hacerLogeo(objetoActual, datos) {
-      RealizarLogeoServicio.hacerLogeo(datos).then((respuesta) => {
-        //objetoActual.probar = respuesta.data;
-        console.log(respuesta.status);
-        if (respuesta.status === 200){
-          this.$router.push('inicio');//redireccionar a principal
 
-        }
-      }).catch(error =>{// hay un error
-        if (error.response.status === 401){
-          this.mostrarLogeoFallido("Las credenciales no coinciden");//credenciales erroneas
-        }else if(error.response.status === 404){
-          this.mostrarLogeoFallido("No se encuentra el usuario con esas credenciales");//no existe usuario
-        }else{
-          this.mostrarLogeoFallido("Error de red");
-        }
-      });
+    hacerLogeo(objetoActual, datos) {
+      RealizarLogeoServicio.hacerLogeo(datos)
+        .then((respuesta) => {
+          //objetoActual.probar = respuesta.data;
+          console.log(respuesta.status);
+          if (respuesta.status === 200) {
+            this.$router.push("inicio"); //redireccionar a principal
+          }
+        })
+        .catch((error) => {
+          // hay un error
+          if (error.response.status === 401) {
+            this.mostrarLogeoFallido("Las credenciales no coinciden"); //credenciales erroneas
+          } else if (error.response.status === 404) {
+            this.mostrarLogeoFallido(
+              "No se encuentra el usuario con esas credenciales"
+            ); //no existe usuario
+          } else {
+            this.mostrarLogeoFallido("Error de red");
+          }
+        });
     },
-    
+
     mostrarLogeoFallido(mensaje) {
       swal.fire("Intenta nuevamente", mensaje, "error");
     },
@@ -113,18 +125,15 @@ export default {
     return {
       nombre: "",
       contrasena: "",
-      probar: ""
+      probar: "",
     };
   },
 };
 </script>
 
 <style scoped>
-footer,
-
-footer{
+footer {
   bottom: 0.1cm;
   align-self: auto;
 }
-
 </style>

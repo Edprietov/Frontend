@@ -7,7 +7,7 @@
       /></label>
       <button class="btn btn-success" @click="enviarForma">Consultar</button>
     </div>
-    <table class="table">
+    <table class="table" aria-describedby="consultar">
       <thead>
         <th scope="col">Id Mascota</th>
         <th scope="col">Id Usuario Implicado</th>
@@ -19,13 +19,13 @@
       </thead>
       <tbody>
         <tr v-for="valor in servidorDatos" :key="valor.id">
-          <td>{{valor.animalId}}</td>
+          <td>{{ valor.animalId }}</td>
           <td>{{ valor.usuarioId }}</td>
           <td>{{ valor.denunId }}</td>
-          <td>{{ valor.denunFecha}}</td>
-          <td>{{ valor.denunTipo}}</td>
-          <td>{{ valor.denunDescrip}}</td>
-          <td>{{ valor.detalles}}</td>
+          <td>{{ valor.denunFecha }}</td>
+          <td>{{ valor.denunTipo }}</td>
+          <td>{{ valor.denunDescrip }}</td>
+          <td>{{ valor.detalles }}</td>
         </tr>
       </tbody>
     </table>
@@ -35,32 +35,32 @@
 <script>
 import Consultar from "@/servicio/ConsultarMaltratoIdMascota";
 export default {
-    
-  data () {
+  data() {
     return {
-        animalId: "",
-        servidorDatos: "",
-    }
+      animalId: "",
+      servidorDatos: "",
+    };
   },
   methods: {
-      enviarForma(e){
-          e.preventDefault();
-          this.buscarUsuario(this.animalId)
-      },
-      buscarUsuario(id){
+    enviarForma(e) {
+      e.preventDefault();
+      this.buscarUsuario(this.animalId);
+    },
+    buscarUsuario(id) {
       Consultar.ConsultarPorId(id)
-          .then(respuesta=>{
-            if(respuesta.status === 200) {
-               this.servidorDatos = respuesta.data;
-            }else{
-              alert("Error");
-            }
-          }).catch(error =>{
-        if(error.response.status === 400){
-            alert("Error:" + error.response.message);
-        }
-      });
-    }
+        .then((respuesta) => {
+          if (respuesta.status === 200) {
+            this.servidorDatos = respuesta.data;
+          } else {
+            info("Error");
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 400) {
+            info("Error:" + error.response.message);
+          }
+        });
+    },
   },
   name: "ConsultarMaltratoIdMascota",
   mounted() {
@@ -69,5 +69,3 @@ export default {
 };
 </script>
 
-<style>
-</style>

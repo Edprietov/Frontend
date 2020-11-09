@@ -9,7 +9,7 @@
         <div class="col-8">
           <div class="card">
             <div class="card-header">
-              <b>EU Edita tu información para manternos al día!</b>
+              <strong>EU Edita tu información para mantenernos al día!</strong>
             </div>
 
             <div class="card-body">
@@ -206,10 +206,11 @@ import swal from "sweetalert2";
 export default {
   name: "RegistroUsuario",
   components: {
-    Header, Footer
+    Header,
+    Footer,
   },
   mounted() {
-    console.log('Componente RegistroUsuario OK.')
+    console.log("Componente RegistroUsuario OK.");
   },
   data() {
     return {
@@ -238,21 +239,27 @@ export default {
         telefono: this.telefono,
         lugar: this.lugar,
         info: this.info,
-        imagenSeleccionada: this.imagenSeleccionada
+        imagenSeleccionada: this.imagenSeleccionada,
       };
-       this.registrarUsuario(objectoActual, info);
+      this.registrarUsuario(objectoActual, info);
     },
 
-    registrarUsuario(objetoActual, info){
+    registrarUsuario(objetoActual, info) {
       RegistrarUsuarioServicio.registrarUsuario(info)
-      .then(respuesta=>{
-        if(respuesta.status === 201)
-        swal.fire("Registro exitoso", "Bienvenido", "success");
-      }).catch(error =>{
-          if(error.response.status == 400){
-            swal.fire("Intente nuevamente", "El usuario o email ya existe", "error");
+        .then((respuesta) => {
+          if (respuesta.status === 201) {
+            swal.fire("Registro exitoso", "Bienvenido", "success");
           }
-      });
+        })
+        .catch((error) => {
+          if (error.response.status == 400) {
+            swal.fire(
+              "Intente nuevamente",
+              "El usuario o email ya existe",
+              "error"
+            );
+          }
+        });
     },
 
     enCambioArchivo(event) {
@@ -289,20 +296,19 @@ export default {
     comprobarFormato() {
       this.comprobarDatos();
     },
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
 @import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
-
 </style>
 
 <style>
-*{
+* {
   box-sizing: border-box;
 }
-body{
+body {
   margin: 10px;
   padding: 20px;
   font-family: sans-serif;
@@ -312,27 +318,27 @@ body{
   text-align: justify;
 }
 
-body::before{
+body::before {
   content: "";
   width: 100%;
-  min-height:150vh;
+  min-height: 150vh;
   position: fixed;
   top: 0;
   left: 0;
 
-  background: linear-gradient(45deg, #F3E2A9, #EFFBFB,#58FA58);
+  background: linear-gradient(45deg, #f3e2a9, #effbfb, #58fa58);
   background-attachment: scroll;
   opacity: 0.5;
   z-index: -1;
 }
 
-h1{
+h1 {
   color: #fff;
   text-align: center;
 }
 
-.titulo{
-  background: #0EA7E7;
+.titulo {
+  background: #0ea7e7;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -340,20 +346,19 @@ h1{
   font-size: 30px;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  border-bottom: 3px solid #EA484E;
+  border-bottom: 3px solid #ea484e;
 }
 
-.form-control{
-  font-family:  Arial, Helvetica, sans-serif;
+.form-control {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
 
 p.texto {
-  font-family:  Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   text-align: justify;
 }
-
 
 .checkbox {
   font-family: Arial, Helvetica, sans-serif;
@@ -363,33 +368,30 @@ p.texto {
   cursor: pointer;
 }
 
-.imagen{
-  display:block;
-  margin:auto;
+.imagen {
+  display: block;
+  margin: auto;
 }
 
-.divM{
+.divM {
   color: #000000;
-  border:6px solid;
+  border: 6px solid;
 }
 
-h2,h3{
-  color:#000000;
+h2,
+h3 {
+  color: #000000;
   font-weight: bold;
   text-align: left;
 }
 
-.h12{
+.h12 {
   color: #000000;
   text-align: center;
 }
 
-footer,
-
-footer{
+footer {
   bottom: 0.1cm;
   align-self: auto;
 }
-
-
 </style>

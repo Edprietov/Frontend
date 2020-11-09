@@ -31,7 +31,7 @@
 
       <button class="btn btn-success" @click="enviarForma">Consultar</button>
     </div>
-    <table class="table">
+    <table class="table" aria-describedby="consultarM">
       <thead>
         <th scope="col">#Denuncia</th>
         <th scope="col">Id Mascota</th>
@@ -81,7 +81,7 @@ export default {
         idMascota: this.idMascota,
         fecha: this.fecha,
       };
-      console.log(info), this.ConsultarMaltratoTodo(objectoActual, info);
+      console.log(info); this.ConsultarMaltratoTodo(objectoActual, info);
     },
     ConsultarMaltratoTodo(objetoActual, info) {
       Consultar.ConsultarMaltrato(info)
