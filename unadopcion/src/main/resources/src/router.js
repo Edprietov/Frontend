@@ -15,6 +15,7 @@ import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
 //import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
 import LlenarSolicitud from "@/views/LlenarSolicitud";
+import IngresarVacuna from "@/components/IngresarVacuna";
 
 
 
@@ -98,6 +99,11 @@ export default new Router({
             path: "/mis-adopciones",
             name: "misadopciones",
             component: MisAdopciones
+        },
+        {
+            path: "/ingresar-vacuna",
+            name: "IngresarVacuna",
+            component: IngresarVacuna
         },
     ]
 })

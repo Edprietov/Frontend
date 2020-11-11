@@ -121,7 +121,7 @@
 
     <br /><button class="btn btn-success" @click="formaEnviar">Enviar</button>
 
-    <footer><br /><Footer></Footer></footer>
+    <br><br/><Footer></Footer>
   </div>
 </template>
 
@@ -129,6 +129,7 @@
 import Footer from "./Footer";
 import LoggedHeader from "@/components/LoggedHeader";
 import RegistrarDenunciaServicio from "@/servicio/RegistrarDenunciaServicio";
+import swal from "sweetalert2";
 
 export default {
   name: "Denuncia",
@@ -175,20 +176,23 @@ export default {
       RegistrarDenunciaServicio.registrarDenuncia(info).then((respuesta) => {
         objetoActual.probar = respuesta.data;
         console.log(respuesta.data);
+        if (respuesta.status === 200) {
+          swal.fire(
+              "Registro exitoso de Denuncia",
+              "Gracias",
+              "success"
+          );
+        }
       });
     },
   },
 };
 </script>
 
-<style scoped>
-footer,
-body {
-  width: 97.5%;
-  position: absolute;
-}
 
+<style>
 footer {
+  position: absolute;
   bottom: 0.1cm;
   align-self: auto;
 }

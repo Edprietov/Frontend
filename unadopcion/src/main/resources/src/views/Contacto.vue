@@ -128,6 +128,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactoServicio from "@/servicio/ContactoServicio";
+import swal from "sweetalert2";
 
 export default {
   name: "Contacto",
@@ -167,6 +168,13 @@ export default {
       ContactoServicio.enviarDatosContacto(info).then((respuesta) => {
         objetoActual.probar = respuesta.data;
         console.log(respuesta.data);
+        if (respuesta.status === 200) {
+          swal.fire(
+              "Registro exitoso de datos de contacto",
+              "Muchas gracias por contactarnos",
+              "success"
+          );
+        }
       });
     },
   },
