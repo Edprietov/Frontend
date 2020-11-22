@@ -89,9 +89,7 @@ export default {
     },
 
     adoptarMascota(mascota){
-     // swal.fire("Puedes adoptar a " + mascota.animNombre, "Falta implementar backend", "success")
       this.confirmarAdopcion(mascota);
-
     },
     enCambio(event){
       let objetoActual = this;
@@ -114,14 +112,14 @@ export default {
         confirmButtonText: 'Si lo quiero!!',
         cancelButtonText: 'Seguir buscando',
       }).then((resultado)=>{
+
         if(resultado.isConfirmed){
-          //guardar foto persistente
-          this.$store.commit("actualizarFotoFuturoAdoptado", mascota.animFoto);
-          //ir a formulario
+          this.$store.commit("actualizarMascotaAdopcion", mascota);
           this.$router.push("/solicitud");
         }else{
           //hacer nada
         }
+        
       })
 
     }

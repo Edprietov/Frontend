@@ -9,27 +9,29 @@ Vue.use(Vuex)
 export default new Vuex.Store({
         plugins: [crearPersistencia()],
         state: {
-            id:"pordefecto",
-            fotoFuturoAdoptado: ""
+            id: undefined,
+            mascota: undefined,
         },
 
         mutations:{// para hacer cambios al valor. Solo se hace en inicio
             actualizarGoogleId(state, valor){
                 state.id = valor
             },
-            actualizarFotoFuturoAdoptado(state, valor){
-                state.fotoFuturoAdoptado = valor;
-
+            actualizarMascotaAdopcion(state, valor){
+                if(state.id != null){
+                    state.mascota = valor;
+                }else{
+                    console.log("Hay un error actualizando a la mascota, no hay usuario logeado")
+                }
             }
         },
         getters:{//para pedir el valor
             getGoogleId: state =>{
                 return state.id
             },
-            getFotoFuturoAdoptado: state =>{
-                return state.fotoFuturoAdoptado
+            getMascotaAdopcion: state => {
+                return state.mascota
             }
-
         }
 
     });

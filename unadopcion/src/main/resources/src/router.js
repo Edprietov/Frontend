@@ -13,9 +13,8 @@ import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
-//import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
-import LlenarSolicitud from "@/views/LlenarSolicitud";
 import IngresarVacuna from "@/components/IngresarVacuna";
+import Solicitud from "@/views/Solicitud";
 
 
 
@@ -91,11 +90,6 @@ export default new Router({
             component: Adoptar
         },
         {
-            path: "/solicitud",
-            name: "solicitud",
-                component: LlenarSolicitud
-        },
-        {
             path: "/mis-adopciones",
             name: "misadopciones",
             component: MisAdopciones
@@ -104,6 +98,11 @@ export default new Router({
             path: "/ingresar-vacuna",
             name: "IngresarVacuna",
             component: IngresarVacuna
+        },
+        {
+            path: "/Solicitud",
+            name: "Solicitud",
+            component: Solicitud
         },
     ]
 })
