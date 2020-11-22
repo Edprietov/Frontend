@@ -14,8 +14,10 @@ import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
 //import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
+
 import LlenarSolicitud from "@/views/LlenarSolicitud";
 import IngresarVacuna from "@/components/IngresarVacuna";
+import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 
 
 
@@ -104,6 +106,11 @@ export default new Router({
             path: "/ingresar-vacuna",
             name: "IngresarVacuna",
             component: IngresarVacuna
+        },
+        {
+            path: "/registro-veterinaria",
+            name: "registro-veterinaria",
+            component: RegistroVeterinaria
         },
     ]
 })
