@@ -13,6 +13,7 @@ import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
+import Admin from "@/views/Admin";
 //import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
 
 import LlenarSolicitud from "@/views/LlenarSolicitud";
@@ -112,5 +113,10 @@ export default new Router({
             name: "registro-veterinaria",
             component: RegistroVeterinaria
         },
+        {
+            path: "/admin",
+            name: "admin",
+            component: Admin
+        }
     ]
 })

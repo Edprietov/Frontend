@@ -10,15 +10,15 @@ export default new Vuex.Store({
         plugins: [crearPersistencia()],
         state: {
             id:"pordefecto",
-            fotoFuturoAdoptado: ""
+            usuarioRol: ""
         },
 
         mutations:{// para hacer cambios al valor. Solo se hace en inicio
             actualizarGoogleId(state, valor){
                 state.id = valor
             },
-            actualizarFotoFuturoAdoptado(state, valor){
-                state.fotoFuturoAdoptado = valor;
+            actualizarUsuarioRol(state, valor){
+                state.usuarioRol = valor;
 
             }
         },
@@ -26,8 +26,8 @@ export default new Vuex.Store({
             getGoogleId: state =>{
                 return state.id
             },
-            getFotoFuturoAdoptado: state =>{
-                return state.fotoFuturoAdoptado
+            getUsuarioRol: state =>{
+                return state.usuarioRol
             }
 
         }
