@@ -43,7 +43,7 @@
             <a class="nav-link" href="/cuidados">Cuidados</a>
           <li class="nav-item">
             <a class="nav-link" href="/contacto">Contacto</a>
-
+</li>
           <li class="nav-item">
             <a class="nav-link" href="/registro-veterinaria">RegistroVeterinaria</a>
           </li>

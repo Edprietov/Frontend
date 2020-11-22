@@ -7,7 +7,7 @@
         <br />
         <!-- primer carta-->
         <div class="col-8">
-          <div class="card">
+          <div class="card text-center">
             <div class="card-header">
               <strong>EU Edita tu información para mantenernos al día!</strong>
             </div>

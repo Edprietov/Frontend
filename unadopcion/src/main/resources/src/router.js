@@ -13,13 +13,16 @@ import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
+
 import Admin from "@/views/Admin";
 //import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
 
-import LlenarSolicitud from "@/views/LlenarSolicitud";
-import IngresarVacuna from "@/components/IngresarVacuna";
-import RegistroVeterinaria from "@/views/RegistroVeterinaria";
+//import LlenarSolicitud from "@/views/LlenarSolicitud";
 
+import IngresarVacuna from "@/components/IngresarVacuna";
+import Solicitud from "@/views/Solicitud";
+//import LlenarSolicitud from "@/views/LlenarSolicitud";
+import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 
 
 
@@ -94,11 +97,6 @@ export default new Router({
             component: Adoptar
         },
         {
-            path: "/solicitud",
-            name: "solicitud",
-                component: LlenarSolicitud
-        },
-        {
             path: "/mis-adopciones",
             name: "misadopciones",
             component: MisAdopciones
@@ -109,7 +107,11 @@ export default new Router({
             component: IngresarVacuna
         },
         {
-            path: "/registro-veterinaria",
+            path: "/Solicitud",
+            name: "Solicitud",
+            component: Solicitud
+        },
+        {   path: "/registro-veterinaria",
             name: "registro-veterinaria",
             component: RegistroVeterinaria
         },
