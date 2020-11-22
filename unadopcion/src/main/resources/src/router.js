@@ -15,7 +15,8 @@ import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
 import IngresarVacuna from "@/components/IngresarVacuna";
 import Solicitud from "@/views/Solicitud";
-
+//import LlenarSolicitud from "@/views/LlenarSolicitud";
+import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 
 
 
@@ -103,6 +104,10 @@ export default new Router({
             path: "/Solicitud",
             name: "Solicitud",
             component: Solicitud
+        },
+        {   path: "/registro-veterinaria",
+            name: "registro-veterinaria",
+            component: RegistroVeterinaria
         },
     ]
 })
