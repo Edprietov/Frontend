@@ -11,6 +11,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import store from './store'
 import SuiVue from 'semantic-ui-vue'
 import VueGoogleMap from 'vuejs-google-maps'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 /* ... */
 

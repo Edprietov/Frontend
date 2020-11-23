@@ -20,15 +20,16 @@
               <div class="field">
                 <select v-model="tipo">
                   <option value="veterinary_care">Veterinaria</option>
+                  <option value="pet_store">Tienda de mascotas</option>
                 </select>
               </div>
 
               <div class="field">
                 <select v-model="radio">
-                  <option value="5">5 KM</option>
-                  <option value="10">10 KM</option>
-                  <option value="15">15 KM</option>
-                  <option value="20">20 KM</option>
+                  <option value="5">1 KM</option>
+                  <option value="10">2 KM</option>
+                  <option value="15">3 KM</option>
+                  <option value="20">10 KM</option>
                 </select>
               </div>
             </div>
@@ -52,7 +53,6 @@
       </div>
       <div class="ten wide column segment ui" ref="map"></div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
@@ -62,8 +62,9 @@
 
 <script>
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+//import Footer from "@/components/Footer";
 import axios from "axios";
+import { API_KEY } from "@/utilities/variables";
 
 export default {
   data() {
@@ -73,6 +74,7 @@ export default {
       lat: 0,
       lng: 0,
       places: [],
+      key: API_KEY,
     };
   },
   computed: {
@@ -88,21 +90,24 @@ export default {
       });
     },
     buscarVeterinarias() {
-       const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?
-      location=${this.lat},${this.lng}
-      &radius=${this.radio * 100}
-      &type=${this.tipo}
-      &key= ${process.env.VUE_APP_API_KEY}`;
+      const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
+        this.lat
+      },${this.lng}&radius=${this.radio * 100}&type=${this.tipo}&key=${
+        this.key
+      }`;
       axios
         .get(
-         URL
+          "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=4.631485500000001,-74.17638649999999&radius=10000&type=veterinary_care&key=".concat(
+            this.key
+          )
         )
-        .then(response => {
+        .then((response) => {
+          console.log(response.data);
           this.places = response.data.results;
           this.addLocationsToGoogleMaps();
         })
-        .catch(error => {
-          console.log(process.env.VUE_APP_API_KEY);
+        .catch((error) => {
+          console.log(URL);
           console.log(error.message);
         });
     },
@@ -110,16 +115,16 @@ export default {
       var map = new window.google.maps.Map(this.$refs["map"], {
         zoom: 15,
         center: new window.google.maps.LatLng(this.lat, this.lng),
-        mapTypeId: window.google.maps.MapTypeId.ROADMAP
+        mapTypeId: window.google.maps.MapTypeId.ROADMAP,
       });
 
-      this.places.forEach( place  => {
+      this.places.forEach((place) => {
         const lat = place.geometry.location.lat;
         const lng = place.geometry.location.lng;
 
         let marker = new window.google.maps.Marker({
           position: new window.google.maps.LatLng(lat, lng),
-          map: map
+          map: map,
         });
         marker.Header;
       });
@@ -127,7 +132,7 @@ export default {
   },
   components: {
     Header,
-    Footer,
+    //Footer,
   },
 };
 </script>
