@@ -1,0 +1,136 @@
+<template>
+  <div id="buscarveterinaria">
+    <Header></Header>
+    <div class="ui grid">
+      <div class="six wide column">
+        <form class="ui segment large form">
+          <div class="field">
+            <div class="ui right icon input large">
+              <input
+                type="text"
+                placeholder="Ingresa tu dirección"
+                v-model="coordinates"
+              />
+              <i class="dot circle link icon" @click="botonLocalizacion"> </i>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="two fields">
+              <div class="field">
+                <select v-model="tipo">
+                  <option value="veterinary_care">Veterinaria</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <select v-model="radio">
+                  <option value="5">5 KM</option>
+                  <option value="10">10 KM</option>
+                  <option value="15">15 KM</option>
+                  <option value="20">20 KM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button class="ui button green" @click="buscarVeterinarias">
+            Buscar
+          </button>
+        </form>
+
+        <div class="ui segment" style="max-height: 500px; overflow: scroll">
+          <div class="ui divided items">
+            <div class="item" v-for="place in places" :key="place.id">
+              <div class="content">
+                <div class="header">{{ place.name }}</div>
+                <div class="meta">{{ place.vicinity }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ten wide column segment ui" ref="map"></div>
+    </div>
+    <Footer></Footer>
+  </div>
+</template>
+
+
+
+
+
+<script>
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      tipo: "",
+      radio: "",
+      lat: 0,
+      lng: 0,
+      places: [],
+    };
+  },
+  computed: {
+    coordinates() {
+      return `${this.lat}, ${this.lng}`;
+    },
+  },
+  methods: {
+    botonLocalizacion() {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.lat = position.coords.latitude;
+        this.lng = position.coords.longitude;
+      });
+    },
+    buscarVeterinarias() {
+       const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?
+      location=${this.lat},${this.lng}
+      &radius=${this.radio * 100}
+      &type=${this.tipo}
+      &key= ${process.env.VUE_APP_API_KEY}`;
+      axios
+        .get(
+         URL
+        )
+        .then(response => {
+          this.places = response.data.results;
+          this.addLocationsToGoogleMaps();
+        })
+        .catch(error => {
+          console.log(process.env.VUE_APP_API_KEY);
+          console.log(error.message);
+        });
+    },
+    addLocationsToGoogleMaps() {
+      var map = new window.google.maps.Map(this.$refs["map"], {
+        zoom: 15,
+        center: new window.google.maps.LatLng(this.lat, this.lng),
+        mapTypeId: window.google.maps.MapTypeId.ROADMAP
+      });
+
+      this.places.forEach( place  => {
+        const lat = place.geometry.location.lat;
+        const lng = place.geometry.location.lng;
+
+        let marker = new window.google.maps.Marker({
+          position: new window.google.maps.LatLng(lat, lng),
+          map: map
+        });
+        marker.Header;
+      });
+    },
+  },
+  components: {
+    Header,
+    Footer,
+  },
+};
+</script>
+
+<style scoped>
+</style>

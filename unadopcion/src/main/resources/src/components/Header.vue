@@ -30,6 +30,10 @@
           <li class="nav-item">
             <a class="nav-link" href="contacto">Contactanos</a>
           </li>
+
+          <li class="nav-item" id="btnPrincipal">
+            <a class="nav-link" href="buscar-veterinaria">Buscar Veterinaria</a>
+          </li>
         </ul>
       </div>
     </nav>

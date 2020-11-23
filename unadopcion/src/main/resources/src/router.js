@@ -13,7 +13,7 @@ import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
-
+import BuscarVeterinaria from "@/components/BuscarVeterinaria";
 import Admin from "@/views/Admin";
 //import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
 
@@ -111,7 +111,8 @@ export default new Router({
             name: "Solicitud",
             component: Solicitud
         },
-        {   path: "/registro-veterinaria",
+        {
+            path: "/registro-veterinaria",
             name: "registro-veterinaria",
             component: RegistroVeterinaria
         },
@@ -119,6 +120,11 @@ export default new Router({
             path: "/admin",
             name: "admin",
             component: Admin
-        }
+        },
+        {
+            path: "/buscar-veterinaria",
+            name: "buscarveterinaria",
+            component: BuscarVeterinaria
+        },
     ]
 })
