@@ -71,7 +71,8 @@ export default {
       MostarPerfil.mostrarPerfil(googleId).then((respuesta) => {
         objetoActual.datosServidor = respuesta.data;
         console.log(respuesta.data);
-        //alert(this.$store.getters.getGoogleId)
+        this.$store.commit("actualizarUsuarioRol", objetoActual.datosServidor.usuarioRol)
+       // alert(this.$store.getters.getUsuarioRol);
       });
     },
   },

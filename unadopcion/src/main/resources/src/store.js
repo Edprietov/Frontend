@@ -9,13 +9,20 @@ Vue.use(Vuex)
 export default new Vuex.Store({
         plugins: [crearPersistencia()],
         state: {
-            id: undefined,
-            mascota: undefined,
+
+            id:"pordefectoid",
+            usuarioRol: "",
+            mascota: undefined
+
         },
 
         mutations:{// para hacer cambios al valor. Solo se hace en inicio
             actualizarGoogleId(state, valor){
                 state.id = valor
+            },
+
+            actualizarUsuarioRol(state, valor) {
+                state.usuarioRol = valor;
             },
             actualizarMascotaAdopcion(state, valor){
                 if(state.id != null){
@@ -29,8 +36,13 @@ export default new Vuex.Store({
             getGoogleId: state =>{
                 return state.id
             },
+
+            getUsuarioRol: state => {
+                return state.usuarioRol
+            },
             getMascotaAdopcion: state => {
                 return state.mascota
+
             }
         }
 
