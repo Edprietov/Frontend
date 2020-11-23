@@ -7,6 +7,17 @@ class RealizarSolicitud{
         return axios.post(UNADOPCION_API_URL + CONTROLADOR + "/Realizar/" + anim_id + "/" + google_Id);
     }
 
+    TraerSolicitudPendiente(info){
+        return axios.post(UNADOPCION_API_URL + CONTROLADOR + "/Consultar-Pendiente", {
+            id: info.id,
+            animid: info.animid,
+            fecha: info.fecha,
+            estado: info.estado,
+            personaid: info.personaid,
+            personaNombre: info.personaNombre,
+            animNombre: info.animNombre,
+        });
+    }
 
 }
 

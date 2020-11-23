@@ -101,9 +101,10 @@ export default {
                 this.$store.commit("actualizarMascotaAdopcion", undefined);
                 this.mostrarFormularioAdopcion();
             }else if(respuesta.status == 200){
-                swal.fire("Error", "Ya ha pedido una adopcion a esta mascota", "error");
+                swal.fire("Error", "Ya ha pedido una adopcion a esta mascota o intenta adoptar a su mascota", "error");
                 this.$store.commit("actualizarMascotaAdopcion", undefined);
                 this.mostrarFormularioAdopcion();
+                this.$router.push("/buscar-mascota");
             }
         })
         .catch((error) => {
