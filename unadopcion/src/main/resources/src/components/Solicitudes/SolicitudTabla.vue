@@ -1,6 +1,6 @@
 <template>
   <div card>
-    <strong>Tabla De solicitudes pendientes</strong>
+    <strong>Tabla De solicitudes</strong>
     <table class="table" aria-describedby="consultarM">
       <thead>
         <th scope="col">Id Solicitud</th>
@@ -18,17 +18,17 @@
           <td>{{ valor.fecha }}</td>
           <td>{{ valor.estado }}</td>
           <td>{{ valor.personaNombre }}</td>
-          <td v-if="valor.personaid != googleId">
+          <td v-if="(valor.personaid != googleId) && valor.estado == 'Pendiente'">
             <button
               class="btn btn-success mr-4"
               id="Aceptar"
-              @click="AceptarSolicitud(valor)"
+              @click="AceptarSolicitud(valor.id)"
             >
               Aceptar
             </button>
             <button
               class="btn btn-danger mr-4"
-              @click="RechazarSolicitud(valor)"
+              @click="RechazarSolicitud(valor.id)"
             >
               Rechazar
             </button>
@@ -47,7 +47,6 @@
         </tr>
       </tbody>
     </table>
-    <br /><strong>Tabla De solicitudes pasadas</strong>
   </div>
 </template>
 
@@ -90,7 +89,6 @@ export default {
       SolicitudServicio.cancelarSolicitud(id)
         .then((respuesta) => {
           if(respuesta.status == 202){
-            console.log("Cancelacion completa")
             Swal.fire("Cancelación exitosa", "La solicitud ha sido cancelada correctamente", "success");
             this.servidorDatosPendiente();
           }else if(respuesta == null){
@@ -102,6 +100,39 @@ export default {
           console.log(error);
         });
     },
+
+    RechazarSolicitud(id){
+      SolicitudServicio.RechazarSolicitud(id)
+        .then((respuesta) => {
+          if(respuesta.status == 202){
+            Swal.fire("Rechazo exitoso", "La solicitud ha sido rechazada correctamente", "success");
+            this.servidorDatosPendiente();
+          }else if(respuesta == null){
+            Swal.fire("Error", "Esta solicitud no existe", "error");
+          }
+          
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    AceptarSolicitud(id){
+      SolicitudServicio.AceptarSolicitud(id, this.googleId)
+        .then((respuesta) => {
+          if(respuesta.status == 202){
+            Swal.fire("Aceptación de solicitud exitosa", "La solicitud ha sido aceptada correctamente", "success");
+            this.servidorDatosPendiente();
+          }else if(respuesta == null){
+            Swal.fire("Error", "Esta solicitud no existe", "error");
+          }
+          
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
   },
 };
 </script>
