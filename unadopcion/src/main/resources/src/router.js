@@ -23,6 +23,7 @@ import IngresarVacuna from "@/components/IngresarVacuna";
 import Solicitud from "@/views/Solicitud";
 //import LlenarSolicitud from "@/views/LlenarSolicitud";
 import RegistroVeterinaria from "@/views/RegistroVeterinaria";
+import ConsultarVeterinaria from "@/components/ConsultarVeterinaria";
 
 
 
@@ -125,6 +126,11 @@ export default new Router({
             path: "/buscar-veterinaria",
             name: "buscarveterinaria",
             component: BuscarVeterinaria
+        },
+        {
+            path: "/consultar-veterinaria",
+            name: "consultarveterinaria",
+            component: ConsultarVeterinaria
         },
     ]
 })

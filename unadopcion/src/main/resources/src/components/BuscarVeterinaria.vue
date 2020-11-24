@@ -97,7 +97,7 @@ export default {
       }`;
       axios
         .get(
-          "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=4.631485500000001,-74.17638649999999&radius=10000&type=veterinary_care&key=".concat(
+          "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=4.631485500000001,-74.17638649999999&radius=100&type=veterinary_care&key=".concat(
             this.key
           )
         )
@@ -107,7 +107,7 @@ export default {
           this.addLocationsToGoogleMaps();
         })
         .catch((error) => {
-          console.log(URL);
+           console.log(URL);
           console.log(error.message);
         });
     },
