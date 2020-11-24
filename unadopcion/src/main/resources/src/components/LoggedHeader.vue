@@ -32,6 +32,9 @@
             <a class="nav-link" href="/buscar-mascota">Buscar Mascota</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/solicitud">Solicitudes</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
@@ -76,9 +79,4 @@ export default {
   },
 };
 </script>
-
-
-<style>
-
-</style>
 
