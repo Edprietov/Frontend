@@ -1,5 +1,6 @@
 <template>
   <div card>
+    <strong>Tabla De solicitudes pendientes</strong>
     <table class="table" aria-describedby="consultarM">
       <thead>
         <th scope="col">Id Solicitud</th>
@@ -17,26 +18,48 @@
           <td>{{ valor.fecha }}</td>
           <td>{{ valor.estado }}</td>
           <td>{{ valor.personaNombre }}</td>
-          <td>
-            <button class="btn btn-success" id="Aceptar" @click="enviarForma">
+          <td v-if="valor.personaid != googleId">
+            <button
+              class="btn btn-success mr-4"
+              id="Aceptar"
+              @click="AceptarSolicitud(valor)"
+            >
               Aceptar
             </button>
+            <button
+              class="btn btn-danger mr-4"
+              @click="RechazarSolicitud(valor)"
+            >
+              Rechazar
+            </button>
           </td>
-          <td>
-            <button class="btn btn-danger mr-4">Rechazar</button>
+          <td v-else-if="valor.estado != 'Pendiente'">
+            <strong>No hay acciones sobre esta Solicitud</strong>
+          </td>
+          <td v-else>
+            <button
+              class="btn btn-danger mr-4"
+              @click="cancelarSolicitud(valor.id)"
+            >
+              Cancelar Solicitud
+            </button>
           </td>
         </tr>
       </tbody>
     </table>
+    <br /><strong>Tabla De solicitudes pasadas</strong>
   </div>
 </template>
 
 <script>
 import SolicitudServicio from "@/servicio/SolicitudServicio";
+import Swal from 'sweetalert2';
+
 export default {
   data() {
     return {
       servidorDatos: "",
+      googleId: this.$store.getters.getGoogleId,
     };
   },
   mounted() {
@@ -57,6 +80,23 @@ export default {
       SolicitudServicio.TraerSolicitudPendiente(info)
         .then((respuesta) => {
           this.servidorDatos = respuesta.data;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+
+    cancelarSolicitud(id) {
+      SolicitudServicio.cancelarSolicitud(id)
+        .then((respuesta) => {
+          if(respuesta.status == 202){
+            console.log("Cancelacion completa")
+            Swal.fire("Cancelación exitosa", "La solicitud ha sido cancelada correctamente", "success");
+            this.servidorDatosPendiente();
+          }else if(respuesta == null){
+            Swal.fire("Error", "Esta solicitud no existe", "error");
+          }
+          
         })
         .catch((error) => {
           console.log(error);

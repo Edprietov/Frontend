@@ -19,6 +19,9 @@ class RealizarSolicitud{
         });
     }
 
+    cancelarSolicitud(id){
+        return axios.post(UNADOPCION_API_URL + CONTROLADOR + "/Cancelar/" + id)
+    }
 }
 
 export default new RealizarSolicitud();
