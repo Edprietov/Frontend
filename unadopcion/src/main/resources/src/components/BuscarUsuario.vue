@@ -40,6 +40,9 @@
 <script>
 import BuscarUsuarioServicio from "@/servicio/BuscarUsuarioServicio";
 import swal from 'sweetalert2';
+import ActualizarPorAdminServicio from "@/servicio/ActualizarPorAdminServicio";
+
+
 export default {
   name: "BuscarUsuario",
   components: {
@@ -76,6 +79,13 @@ export default {
         if(result.isConfirmed){
           //enviar a servidor
 
+              let info = {
+                adminGoogleId: this.$store.getters.getGoogleId,
+                usuarioGoogleId: usuario.usuarioGoogleId,
+                usuarioRol: rol,
+                usuarioPuntos: puntos
+              }
+              this.actualizarUsuario(this, info);
         }
       });
     },
@@ -84,7 +94,9 @@ export default {
           title: 'Editar Puntos',
           input: 'text',
           inputValue:usuario.usuarioPuntos,
-          showCancelButton: 'true',
+          showConfirmButton: true,
+          showCancelButton: true,
+          confirmButtonText:"Cambiar Puntos",
           inputValidator:(value) => {
             this.confirmarEdicion(usuario, rol, value);
           }
@@ -106,9 +118,12 @@ export default {
         },
 
         inputValue:usuario.usuarioRol,
-        showCancelButton: 'true',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonText:"Cambiar Role",
         inputValidator:(value) => {
-          this.tomarPuntos(usuario, value)
+          this.tomarPuntos(usuario, value);
+
         }
         })
 
@@ -136,10 +151,32 @@ export default {
             alert("Pucha error:" + error.response.message);
         }
       });
+    },
+    //funcion para admin
+    actualizarUsuario(objetoActual, info){
+      ActualizarPorAdminServicio.actualizarUsuario(info)
+      .then(respuesta=>{
+        if(respuesta.status === 200) {
+          objetoActual.servidorDatos = respuesta.data;
+          swal.fire("Usuario actualizado", "", "success");
+
+        }else{
+          swal.fire("Error", "", "error");
+        }
+
+      }).catch(error =>{
+
+
+           swal.fire("No puede realizar esta acción: " + error.message,"", "error" );
+
+
+      });
+
     }
   },
 
   created(){
+
 
   }
 }
