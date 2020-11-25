@@ -50,20 +50,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/registro-veterinaria">RegistroVeterinaria</a>
           </li>
-           <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
-
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cuidados">Cuidados</a>
-
-           <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+            <a class="nav-link" href="/consultar-veterinaria">ConsultaVeterinaria</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cuidados">Cuidados</a>
-          </li>-->
-            <!--<li class="nav-item">
-            <a class="nav-link" href="contacto">Contactanos</a>
-          </li>-->
 
         </ul>
       </div>

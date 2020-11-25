@@ -11,7 +11,7 @@
                 placeholder="Ingresa tu dirección"
                 v-model="coordinates"
               />
-              <i class="dot circle link icon" @click="botonLocalizacion"> </i>
+              <em class="dot circle link icon" @click="botonLocalizacion"> </em>
             </div>
           </div>
 
@@ -83,13 +83,15 @@ export default {
     },
   },
   methods: {
-    botonLocalizacion() {
+    botonLocalizacion(e) {
+      e.preventDefault();
       navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
       });
     },
-    buscarVeterinarias() {
+    buscarVeterinarias(e) {
+      e.preventDefault();
       const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
         this.lat
       },${this.lng}&radius=${this.radio * 100}&type=${this.tipo}&key=${
@@ -107,11 +109,12 @@ export default {
           this.addLocationsToGoogleMaps();
         })
         .catch((error) => {
-           console.log(URL);
+          console.log(URL);
           console.log(error.message);
         });
     },
-    addLocationsToGoogleMaps() {
+    addLocationsToGoogleMaps(e) {
+      e.preventDefault();
       var map = new window.google.maps.Map(this.$refs["map"], {
         zoom: 15,
         center: new window.google.maps.LatLng(this.lat, this.lng),
@@ -126,7 +129,7 @@ export default {
           position: new window.google.maps.LatLng(lat, lng),
           map: map,
         });
-        marker.Header;
+      console.log(marker);
       });
     },
   },
@@ -137,5 +140,3 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>

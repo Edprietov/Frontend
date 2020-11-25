@@ -15,13 +15,8 @@ import MisAdopciones from "@/views/MisAdopciones";
 import ConsultarMaltrato from "@/components/ConsultarMaltrato";
 import BuscarVeterinaria from "@/components/BuscarVeterinaria";
 import Admin from "@/views/Admin";
-//import ConsultarMaltratoNombreUsuario from "@/components/ConsultarMaltratoNombreUsuario";
-
-//import LlenarSolicitud from "@/views/LlenarSolicitud";
-
 import IngresarVacuna from "@/components/IngresarVacuna";
 import Solicitud from "@/views/Solicitud";
-//import LlenarSolicitud from "@/views/LlenarSolicitud";
 import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 import ConsultarVeterinaria from "@/components/ConsultarVeterinaria";
 

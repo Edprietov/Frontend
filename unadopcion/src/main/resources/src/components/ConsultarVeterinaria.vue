@@ -6,13 +6,7 @@
         ><strong>Nombre:</strong></label
       >
       <div class="col-sm-2">
-        <input
-          required
-          type="text"
-          id="nombre"
-          class="form-control"
-          v-model="nombre"
-        />
+        <input type="text" id="nombre" class="form-control" v-model="nombre" />
       </div>
 
       <label class="control-label col-sm-2" for="calificacion"
@@ -20,6 +14,7 @@
       >
       <div class="col-sm-2">
         <select class="form-control" id="calificacion" v-model="calificacion">
+          <option value="" selected></option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -36,13 +31,15 @@
         <th scope="col">Dirección</th>
         <th scope="col">Telefono</th>
         <th scope="col">Sitio web</th>
+        <th scope="col">Calificación</th>
       </thead>
       <tbody>
         <tr v-for="valor in servidorDatos" :key="valor.id">
-          <td>{{ valo.nombre }}</td>
+          <td>{{ valor.nombre }}</td>
           <td>{{ valor.direccion }}</td>
-          <td>{{ valor.telefono }}</td>
-          <td>{{ valor.sitioWeb }}</td>
+          <td>{{ valor.numero }}</td>
+          <a href="https://www.coursecrown.com">{{ valor.sitioWeb }}</a>
+          <td>{{ valor.calificacion }}</td>
         </tr>
       </tbody>
     </table>
@@ -65,9 +62,23 @@ export default {
   methods: {
     enviarForma(e) {
       e.preventDefault();
-      console.log(this.nombre);
-      console.log(this.calificacion);
-      this.buscarNombre(this.nombre);
+      let info = {
+        nombre: this.nombre,
+        calificacion: this.calificacion,
+      };
+      if (this.nombre != "") {
+        if (this.calificacion != "") {
+          this.buscarVarios(info);
+        } else {
+          this.buscarNombre(this.nombre);
+        }
+      } else {
+        if (this.calificacion != "") {
+          this.buscarCalificacion(this.calificacion);
+        } else {
+          this.buscarTodas();
+        }
+      }
     },
     buscarNombre(nombre) {
       Consultar.ConsultarPorNombre(nombre)
@@ -75,12 +86,12 @@ export default {
           if (respuesta.status === 200) {
             this.servidorDatos = respuesta.data;
           } else {
-            alert("Error");
+             console.log("Error");
           }
         })
         .catch((error) => {
           if (error.response.status === 400) {
-            alert("Error:" + error.response.message);
+            console.log("Error:" + error.response.message);
           }
         });
     },
@@ -90,12 +101,42 @@ export default {
           if (respuesta.status === 200) {
             this.servidorDatos = respuesta.data;
           } else {
-            alert("Error");
+            console.log("Error");
           }
         })
         .catch((error) => {
           if (error.response.status === 400) {
-            alert("Error:" + error.response.message);
+            console.log("Error:" + error.response.message);
+          }
+        });
+    },
+    buscarVarios(info) {
+      Consultar.ConsultarVarios(info)
+        .then((respuesta) => {
+          if (respuesta.status === 200) {
+            this.servidorDatos = respuesta.data;
+          } else {
+            console.log("Error");
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 400) {
+            console.log("Error:" + error.response.message);
+          }
+        });
+    },
+    buscarTodas(info) {
+      Consultar.Consultar(info)
+        .then((respuesta) => {
+          if (respuesta.status === 200) {
+            this.servidorDatos = respuesta.data;
+          } else {
+            console.log("Error");
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 400) {
+            console.log("Error:" + error.response.message);
           }
         });
     },
