@@ -64,7 +64,7 @@ export default {
     return {
       nombreUsuario: "",
       idMascota: "",
-      fecha:"",
+      fecha: "",
       servidorDatos: "",
     };
   },
@@ -81,7 +81,8 @@ export default {
         idMascota: this.idMascota,
         fecha: this.fecha,
       };
-      console.log(info); this.ConsultarMaltratoTodo(objectoActual, info);
+      console.log(info);
+      this.ConsultarMaltratoTodo(objectoActual, info);
     },
     ConsultarMaltratoTodo(objetoActual, info) {
       Consultar.ConsultarMaltrato(info)
@@ -91,12 +92,12 @@ export default {
             console.log(respuesta.data);
             this.servidorDatos = respuesta.data;
           } else {
-            alert("Error");
+            console.log("Error");
           }
         })
         .catch((error) => {
           if (error.response.status === 400) {
-            alert("Error:" + error.response.message);
+            console.log("Error:" + error.response.message);
           }
         });
     },

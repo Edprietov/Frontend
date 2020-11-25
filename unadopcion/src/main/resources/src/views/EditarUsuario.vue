@@ -51,12 +51,12 @@ export default {
               this.correo = this.datosServidor.correo;
               this.telefono = this.datosServidor.telefono;
             } else {
-              alert("Error");
+              //alert("Error");
             }
           })
           .catch((error) => {
             if (error.response.status === 400) {
-              alert("Pucha error:" + error.response.message);
+              //alert("error:" + error.response.message);
             }
           });
     }

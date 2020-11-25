@@ -32,6 +32,9 @@
             <a class="nav-link" href="/buscar-mascota">Buscar Mascota</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/solicitud">Solicitudes</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
@@ -47,20 +50,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/registro-veterinaria">RegistroVeterinaria</a>
           </li>
-           <!-- <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
-
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="/cuidados">Cuidados</a>
-
-           <a class="nav-link" href="mis-adopciones">Mis adopciones</a>
+            <a class="nav-link" href="/consultar-veterinaria">ConsultaVeterinaria</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cuidados">Cuidados</a>
-          </li>-->
-            <!--<li class="nav-item">
-            <a class="nav-link" href="contacto">Contactanos</a>
-          </li>-->
 
         </ul>
       </div>
@@ -76,9 +68,4 @@ export default {
   },
 };
 </script>
-
-
-<style>
-
-</style>
 

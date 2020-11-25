@@ -38,6 +38,7 @@
                         class="img-fluid"
                         width="185"
                         height="185"
+                        alt="Nada"
                         v-bind:src="'data:image;base64,' + valor.animFoto"
                       />
                       <br /><button
