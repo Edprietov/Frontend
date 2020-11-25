@@ -92,7 +92,7 @@ export default {
       e.preventDefault();
       axios
         .get(
-          "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
+          "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
             .concat(this.lat, ",")
             .concat(this.lng, "&radius=")
             .concat(this.radio *100, "&type=")
