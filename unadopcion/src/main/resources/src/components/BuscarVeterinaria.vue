@@ -11,7 +11,7 @@
                 placeholder="Ingresa tu dirección"
                 v-model="coordinates"
               />
-              <em class="dot circle link icon" @click="botonLocalizacion"> </em>
+              <i class="dot circle link icon" @click="botonLocalizacion"> </i>
             </div>
           </div>
 
@@ -26,10 +26,8 @@
 
               <div class="field">
                 <select v-model="radio">
-                  <option value="5">1 KM</option>
-                  <option value="10">2 KM</option>
-                  <option value="15">3 KM</option>
-                  <option value="20">10 KM</option>
+                  <option value="5">500 M</option>
+                  <option value="10">1KM</option>
                 </select>
               </div>
             </div>
@@ -92,16 +90,14 @@ export default {
     },
     buscarVeterinarias(e) {
       e.preventDefault();
-      const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${
-        this.lat
-      },${this.lng}&radius=${this.radio * 100}&type=${this.tipo}&key=${
-        this.key
-      }`;
       axios
         .get(
-          "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=4.631485500000001,-74.17638649999999&radius=100&type=veterinary_care&key=".concat(
-            this.key
-          )
+          "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
+            .concat(this.lat, ",")
+            .concat(this.lng, "&radius=")
+            .concat(this.radio *100, "&type=")
+            .concat(this.tipo, "&key=")
+            .concat(this.key)
         )
         .then((response) => {
           console.log(response.data);
@@ -113,13 +109,14 @@ export default {
           console.log(error.message);
         });
     },
-    addLocationsToGoogleMaps(e) {
-      e.preventDefault();
+    addLocationsToGoogleMaps() {
       var map = new window.google.maps.Map(this.$refs["map"], {
         zoom: 15,
         center: new window.google.maps.LatLng(this.lat, this.lng),
         mapTypeId: window.google.maps.MapTypeId.ROADMAP,
       });
+
+      var infowindow = new window.google.maps.InfoWindow();
 
       this.places.forEach((place) => {
         const lat = place.geometry.location.lat;
@@ -129,7 +126,14 @@ export default {
           position: new window.google.maps.LatLng(lat, lng),
           map: map,
         });
-      console.log(marker);
+
+        window.google.maps.event.addListener(marker, "click", () => {
+          infowindow.setContent(
+            `<div class= "ui header">${place.name}</div><p>${place.vicinity}</p>`
+          );
+
+          infowindow.open(map, marker);
+        });
       });
     },
   },
