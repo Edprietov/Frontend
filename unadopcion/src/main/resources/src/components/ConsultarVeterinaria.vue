@@ -38,7 +38,7 @@
           <td>{{ valor.nombre }}</td>
           <td>{{ valor.direccion }}</td>
           <td>{{ valor.numero }}</td>
-          <a href="https://www.coursecrown.com">{{ valor.sitioWeb }}</a>
+          <a href=npm ru>{{ valor.sitioWeb }}</a>
           <td>{{ valor.calificacion }}</td>
         </tr>
       </tbody>

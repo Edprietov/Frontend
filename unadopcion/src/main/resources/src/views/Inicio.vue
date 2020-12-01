@@ -21,7 +21,9 @@
             <button  class="btn btn-success" @click="editarUsuario">Editar mi perfil</button>
             <br>
             </div>
-         <BuscarUsuario id="buscarusuario"></BuscarUsuario>
+
+         <BuscarUsuario class="text-capitalize" id="buscarusuario"></BuscarUsuario>
+
        <div><br></div></div>
 
       <Footer></Footer>

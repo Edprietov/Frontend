@@ -62,7 +62,7 @@
 import Header from "@/components/Header";
 //import Footer from "@/components/Footer";
 import axios from "axios";
-import { API_KEY } from "@/utilities/variables";
+import { VUE_APP_APIKEY } from "@/utilities/variables";
 
 export default {
   data() {
@@ -72,7 +72,7 @@ export default {
       lat: 0,
       lng: 0,
       places: [],
-      key: API_KEY,
+      key: VUE_APP_APIKEY,
     };
   },
   computed: {

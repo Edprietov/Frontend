@@ -32,26 +32,32 @@
             <a class="nav-link" href="/buscar-mascota">Buscar Mascota</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/mostrar-mascota">Mostar Mascota</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/consultar-mascota">Consultar Mascota</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="/solicitud">Solicitudes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/denuncia">Denunciar</a>
           </li>
           <li class="nav-item">
-
-            <a class="nav-link" href="/consultar-maltrato"
-              >Consultar Maltrato</a
-            >
-
+            <a class="nav-link" href="/consultar-maltrato">Consultar Maltrato</a>
+          <li class="nav-item">
             <a class="nav-link" href="/cuidados">Cuidados</a>
           <li class="nav-item">
             <a class="nav-link" href="/contacto">Contacto</a>
 </li>
           <li class="nav-item">
-            <a class="nav-link" href="/registro-veterinaria">RegistroVeterinaria</a>
+            <a class="nav-link" href="/registro-veterinaria">Registro Veterinaria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/consultar-veterinaria">ConsultaVeterinaria</a>
+            <a class="nav-link" href="/consultar-veterinaria">Consulta Veterinaria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/buscar-veterinaria">Buscar Veterinaria</a>
           </li>
 
         </ul>
