@@ -58,7 +58,7 @@
                       <label class="control-label col-sm-2" for="animalEdad"
                         ><strong>Edad:</strong></label
                       >
-                      <div class="col-sm-10">
+                      <div class="col-sm-20">
                         <input
                           required
                           type="number"
@@ -74,7 +74,7 @@
                       <strong class="control-label col-sm-2" for="animalTipo"
                         >Especie:</strong
                       >
-                      <div class="col-sm-10">
+                      <div class="col-sm-20">
                         <select
                           required
                           class="form-control"
@@ -98,7 +98,7 @@
                       <strong class="control-label col-sm-2" for="animalSexo"
                         >Sexo:</strong
                       >
-                      <div class="col-sm-10">
+                      <div class="col-sm-20">
                         <select
                           required
                           class="form-control"
@@ -111,15 +111,49 @@
                       </div>
                     </div>
 
+
+
+                    <br/><div class="form-row">
+                      <label class="control-label col-sm-2" for="animalMicrochipId"
+                      ><strong>Microchip ID:</strong></label
+                      >
+                      <div class="col-sm-20">
+                        <input
+                            type="text"
+                            id="animalMicrochipId"
+                            class="form-control"
+                            v-model="animalmicrochipid"
+                        />
+                      </div>
+                    </div>
+
+                    <br />
+                    <div class="form-row">
+                      <strong class="control-label col-sm-2" for="animalEsterilizacion"
+                      >Esterilizacion:</strong
+                      >
+                      <div class="col-sm-20">
+                        <select
+                            required
+                            class="form-control"
+                            id="animalEsterilizacion"
+                            v-model="animalesterilizacion"
+                        >
+                          <option>Esterilizado</option>
+                          <option>No Esterilizado</option>
+                        </select>
+                      </div>
+                    </div>
+
                     <br />
                     <div class="form-row">
                       <br /><strong class="control-label row-cols-md-2"
-                        >Algo curioso sobre la mascota:<br
-                      /></strong>
+                    >Algo curioso sobre la mascota:<br
+                    /></strong>
                       <textarea
-                        type="text"
-                        class="control-label row-cols-sm-5"
-                        v-model="animaldescripcion"
+                          type="text"
+                          class="control-label row-cols-sm-5"
+                          v-model="animaldescripcion"
                       ></textarea>
                     </div>
 
@@ -177,6 +211,9 @@ export default {
       animalsexo: "",
       animaledad: "",
       animaldescripcion: "",
+      animalmicrochipid: "",
+      animalesterilizacion:"",
+      animalestado:"activo",
       imagenSeleccionada: null,
       probar: "",
       imagen: "",
@@ -204,6 +241,9 @@ export default {
         animalsexo: this.animalsexo,
         animaledad: this.animaledad,
         animaldescripcion: this.animaldescripcion,
+        animalmicrochipid: this.animalmicrochipid,
+        animalesterilizacion:this.animalesterilizacion,
+        animalestado:this.animalestado,
       };
       //diccionario a JSON
       let json = JSON.stringify(infoRegistro);
@@ -245,4 +285,13 @@ export default {
 
 <style>
 @import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+
+img {
+  border-radius: 8px;
+}
+
+footer {
+  bottom: 0.1cm;
+  align-self: auto;
+}
 </style>

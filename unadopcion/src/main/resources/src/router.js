@@ -19,6 +19,10 @@ import IngresarVacuna from "@/components/IngresarVacuna";
 import Solicitud from "@/views/Solicitud";
 import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 import ConsultarVeterinaria from "@/components/ConsultarVeterinaria";
+import MostrarMascota from "@/components/MostrarMascota";
+import EditarMascota from "@/components/EditarMascota";
+import MostrarMascotaNombre from "@/components/MostrarMascotaNombre";
+import ConsultarVacuna from "@/components/ConsultarVacuna";
 
 
 
@@ -126,6 +130,26 @@ export default new Router({
             path: "/consultar-veterinaria",
             name: "consultarveterinaria",
             component: ConsultarVeterinaria
+        },
+        {
+            path: "/mostrar-mascota",
+            name: "mostarmascota",
+            component: MostrarMascota
+        },
+        {
+            path: "/consultar-mascota",
+            name: "consultarmascota",
+            component: MostrarMascotaNombre
+        },
+        {
+            path: "/editar-mascota",
+            name: "editarmascota",
+            component: EditarMascota
+        },
+        {
+            path: "/consultar-vacuna",
+            name: "consultarvacuna",
+            component: ConsultarVacuna
         },
     ]
 })

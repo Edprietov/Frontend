@@ -42,7 +42,6 @@ export default new Vuex.Store({
             },
             getMascotaAdopcion: state => {
                 return state.mascota
-
             }
         }
 
