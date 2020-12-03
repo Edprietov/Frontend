@@ -3,7 +3,7 @@ module.exports = {
         proxy: {
             '^/api': {
                 ws:false,
-                target: 'http://localhost:8080',
+                target: 'https://unadopcion-296402.uc.r.appspot.com',
                 pathRewrite:{'^/api': ''},
                 changeOrigin: true,
                 secure:false

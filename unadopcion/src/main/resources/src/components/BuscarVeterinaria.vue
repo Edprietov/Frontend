@@ -59,10 +59,12 @@
 
 
 <script>
+
 import Header from "@/components/Header";
 //import Footer from "@/components/Footer";
 import axios from "axios";
 import { API_KEY } from "@/utilities/variables";
+
 
 export default {
   data() {
@@ -95,7 +97,7 @@ export default {
           "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
             .concat(this.lat, ",")
             .concat(this.lng, "&radius=")
-            .concat(this.radio *100, "&type=")
+            .concat(this.radio * 100, "&type=")
             .concat(this.tipo, "&key=")
             .concat(this.key)
         )
@@ -108,6 +110,15 @@ export default {
           console.log(URL);
           console.log(error.message);
         });
+      console.log(URL);
+
+          console.log(restRequest);
+          var restRequest = window.gapi.client.request({
+    'path': 'https://people.googleapis.com/v1/people/me/connections',
+  });
+
+
+  alert(restRequest)
     },
     addLocationsToGoogleMaps() {
       var map = new window.google.maps.Map(this.$refs["map"], {

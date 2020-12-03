@@ -1,5 +1,5 @@
 import axios from "axios";
-const UNADOPCION_API_URL = "api";
+const UNADOPCION_API_URL = "/api";
 const CONTROLADOR = "/Solicitud";
 
 class RealizarSolicitud{
