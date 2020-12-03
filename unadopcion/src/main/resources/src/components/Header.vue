@@ -23,7 +23,7 @@
           </li>
 
           <li class="nav-item" id="btnGoogleLogUser">
-            <a class="nav-link" href="https://unadopcion-296402.uc.r.appspot.com/autenticar"
+            <a class="nav-link" href="http://34.123.151.81:8080/autenticar"
               >Iniciar con Google</a
             >
           </li>
