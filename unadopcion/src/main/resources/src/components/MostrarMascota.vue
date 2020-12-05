@@ -1,9 +1,9 @@
 <template>
 
   <div><LoggedHeader></LoggedHeader>
-    <br><div class="container">
-        <div class="col-md-20">
-          <div class="card">
+    <br><div>
+        <!--<div class="col-md-20">-->
+          <div class="card" id="card-mostrar-mascota">
             <div class="card-header"><b>Perfil Mascota</b></div>
 
             <div class="card-body">
@@ -13,15 +13,16 @@
                 <label class="control-label col-sm-2">
                   <input type="textr" class="control-label col-sm-12" @change="enCambio($event)" v-model="nombre"></label>
 
-                <strong class="text-center">Animal ID: </strong>
+                <!--<strong class="text-center">Animal ID: </strong>
                   <label class="control-label col-sm-2">
-                    <input type="number" class="control-label col-sm-12" @change="enCambio($event)" v-model="animalId"></label>
+                    <input type="number" class="control-label col-sm-12" @change="enCambio($event)" v-model="animalId"></label>-->
                   <button class="btn btn-success" @click="enviarForma">Buscar</button>
               </form>
 
 
               <br/><table class="table">
                 <thead>
+                <th scope="col">ID</th>
                 <th scope="col">Foto</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Especie</th>
@@ -35,6 +36,7 @@
                 </thead>
                 <tbody>
                 <tr v-for="valor in servidorDatos" :key="valor.id">
+                  <td>{{ valor.animId }}</td>
                   <td>
                     <img
                         class="img-fluid"
@@ -51,13 +53,19 @@
                   <td>{{ valor.animEsterilizacion }}</td>
                   <td>{{ valor.animDescrip }}</td>
                   <td><button class="btn-primary" @click="mostrarCarnet(valor)">Carnet</button></td>
-                  <td><button class="btn-primary" @click="editarMascota">Editar</button></td>
+                  <!--td><button class="btn-primary" @click="editarMascota">Editar</button>-->
+                  <td><button class="btn-primary" @click="editarMascota(valor)">Editar</button>
+                      <br/><br/><button class="btn-primary" @click="editarMicrochipID(valor)">Microchip ID</button>
+                      <br/><br/><button class="btn-primary" @click="editarEsterilizacion">Esterilizacion</button>
+                  </td>
+
+
                 </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
+        <!--</div>-->
     </div>
     <footer><br/><Footer></Footer></footer>
   </div>
@@ -69,6 +77,8 @@ import LoggedHeader from "../components/LoggedHeader";
 import Footer from "@/components/Footer";
 import MostrarMascotaServicio from "@/servicio/MostrarMascotaServicio";
 import MostrarMascotaNombreServicio from "@/servicio/MostrarMascotaNombreServicio";
+import swal from "sweetalert2";
+
 
 export default {
   name: "BusquedaMascota",
@@ -84,6 +94,21 @@ export default {
     };
   },
   methods: {
+
+    mostrarFormularioAdopcion() {
+      if (
+          this.$store.getters.getGoogleId != undefined &&
+          this.$store.getters.getMascotaAdopcion != undefined
+      ) {
+        this.mascota = this.$store.getters.getMascotaAdopcion;
+        document.getElementById("card-mostrar-mascota").style.display = "block"; //MOSTRAR;
+        //document.getElementById("card-adopcion").style.display = "none"; //NO MOSTRAR
+      }else{
+        document.getElementById("card-mostrar-mascota").style.display = "none"; //NO MOSTRAR
+      }
+    },
+
+
     enviarForma(e) {
       e.preventDefault();
       let objetoActual = this;
@@ -115,15 +140,51 @@ export default {
       });
     },
 
-    editarMascota(e) {
+    /*editarMascota(e) {
       e.preventDefault();
       this.$router.push('/editar-mascota');
+    },*/
+
+    editarMascota(mascota) {
+      this.confirmarEdicion(mascota);
     },
+
 
     mostarCarnet(e) {
       e.preventDefault();
       this.$router.push('/carnet-mascota');
     },
+
+    confirmarEdicion(mascota){
+      swal.fire({
+        title:"¿Deseas editar los datos de  " + mascota.animNombre + " ?",
+        showCancelButton: true,
+        confirmButtonText: 'Si, Editar',
+        cancelButtonText: 'Cancelar',
+      }).then((resultado)=>{
+
+        if(resultado.isConfirmed){
+          this.$store.commit("actualizarMascota", mascota);
+          this.$router.push("/editar-mascota");
+        }else{
+          //NO hacer nada
+        }
+
+      })
+
+    },
+
+    editarMicrochipID(mascota){
+      this.$store.commit("actualizarMascota", mascota);
+      this.$router.push("/editar-microchip");
+    },
+
+    editarEsterilizacion(e){
+      e.preventDefault()
+    },
+
+
+
 
   },
   created() {

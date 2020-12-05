@@ -19,7 +19,7 @@
                 <div class="form-row">
                   <label class="control-label col-sm-2" ><strong>Teléfono:</strong></label>
                   <div class="col-sm-10">
-                    <input  required type="text"  class="form-control"  v-model="usuarioTelefono">
+                    <input  required type="tel"  class="form-control"  v-model="usuarioTelefono">
                   </div>
                 </div>
 

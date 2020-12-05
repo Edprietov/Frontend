@@ -61,7 +61,7 @@
                       <div class="col-sm-20">
                         <input
                           required
-                          type="number"
+                          type="number" min="0"
                           id="animalEdad"
                           class="form-control"
                           v-model="animaledad"
@@ -119,7 +119,7 @@
                       >
                       <div class="col-sm-20">
                         <input
-                            type="text"
+                            type="number" min="0"
                             id="animalMicrochipId"
                             class="form-control"
                             v-model="animalmicrochipid"

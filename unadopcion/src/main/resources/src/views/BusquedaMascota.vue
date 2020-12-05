@@ -33,6 +33,7 @@
                 </thead>
                 <tbody>
                   <tr v-for="valor in servidorDatos" :key="valor.id">
+                    <td>{{valor.animId}}</td>
                     <td>
                       <img
                         class="img-fluid"
@@ -106,6 +107,7 @@ export default {
         console.log(respuesta.data);
       });
     },
+
     confirmarAdopcion(mascota){
       swal.fire({
         title:"Puedes adoptar a " + mascota.animNombre,
