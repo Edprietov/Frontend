@@ -23,6 +23,7 @@ import MostrarMascota from "@/components/MostrarMascota";
 import EditarMascota from "@/components/EditarMascota";
 import ConsultarVacuna from "@/components/ConsultarVacuna";
 import EditarMicrochipID from "@/components/EditarMicrochipID";
+import Prueba from "@/components/Prueba";
 
 
 
@@ -151,6 +152,11 @@ export default new Router({
             path: "/editar-microchip",
             name: "editarmicrochip",
             component: EditarMicrochipID
+        },
+        {
+            path: "/prueba",
+            name: "prueba",
+            component: Prueba
         },
 
     ]

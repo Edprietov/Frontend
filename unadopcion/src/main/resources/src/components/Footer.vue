@@ -1,5 +1,5 @@
 <template>
-    <div class="Footer">
+    <div id="Footer" class="Footer">
       <br><nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-bottom">
             <a class="navbar-brand" href="principal">
                 <img src="@/assets/UNAdopcionBN.png" alt="Logo UNadopcion" height="40">
@@ -49,3 +49,7 @@
     }
 }
 </script>
+
+<style>
+
+</style>

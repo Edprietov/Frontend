@@ -2,19 +2,17 @@
   <div id="principal">
     <Header></Header>
     <div class="container-fluid">
-        <div class="row"> <img src="@/assets/HeroSection.png" alt="Banner principal" width="100%"> </div>
+        <div class="row"> <img src="@/assets/HeroSection.png" alt="Banner principal" width="100%" height="90%"> </div>
     </div>
 
-    <div class="container">
+    <div class="container justify-content-center">
       <div class="row">
           <div class="col"> <img src="@/assets/Dog.jpg" alt="Perro" width="300"></div>
           <div class="col"><img src="@/assets/cat.jpg" alt="Gato" width="300"></div>
           <div class="col"><img src="@/assets/Hams.jpg" alt="Hamster" width="300"></div>
       </div>
     </div>
-
     <Medio> </Medio>
-
 
     <Footer></Footer>
   </div>
@@ -35,6 +33,12 @@ export default {
 #Principal{
 padding-top: 10%;
 }
-<style scoped>
 
+
+<style scoped>
+.container {
+  display: flex;
+  margin: ;
+  align-items: center;
+}
 </style>

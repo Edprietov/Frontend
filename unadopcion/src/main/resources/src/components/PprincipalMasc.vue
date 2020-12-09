@@ -1,8 +1,9 @@
 <template>
-    <div class="row">
-        <div class="col-md-2"></div>
-            <div class="col-8">
+    <div class="container">
+        <div class="row justify-content-center"></div>
+            <div >
                 <br><br>
+                <div class="container">
                 <p class="text-justify">Es la información del evento más improtante a suceder en día. También puede ser
                     información de nosotros como grupo de trabajo que estamos buscando desarrollar.Es la información del
                     evento más improtante a suceder en día. También puede ser información de nosotros como grupo de trabajo
@@ -28,68 +29,18 @@
                     <br>
                 </p>
             </div>
-        <div class="col-md-2"></div>
-
-        <div class="row">
-            <div class="col-md-1">
-                </div>
-
-            <div class="col">
-                <div class="row">
-                    <img src="@/assets/subir-imagen.png" alt="" width="100px" class="mx-auto">
-                </div>
-                <div class="row">
-                    <p class="text-justify">Descripción de la mascota que se quiere adopatar y que aparece al comienzo. Es
-                        una descrición breve que ayuda con detalles importantes del animal</p>
-                </div>
-
-                <div class="row">
-                    <a href="adoptar" class="btn btn-primary">Adoptar</a>
-                </div>
-            </div>
-
-            <div class="col-md-1">
-            </div>
-
-            <div class="col">
-                <div class="row">
-                    <img src="@/assets/subir-imagen.png" alt="" width="100px" class="mx-auto">
-                </div>
-                <div class="row">
-                    <p class="text-justify">Descripción de la mascota que se quiere adopatar y que aparece al comienzo. Es
-                        una descrición breve que ayuda con detalles importantes del animal</p>
-                </div>
-
-                <div class="row">
-                    <a href="adoptar" class="btn btn-primary">Adoptar</a>
-                </div>
-            </div>
-
-
-                <div class="col-md-1">
-                </div>
-
-                <div class="col">
-                    <div class="row">
-                        <img src="@/assets/subir-imagen.png" alt="" width="100px" class="mx-auto">
-                    </div>
-                    <div class="row">
-                        <p class="text-justify">Descripción de la mascota que se quiere adopatar y que aparece al comienzo. Es
-                            una descrición breve que ayuda con detalles importantes del animal</p>
-                    </div>
-
-                    <div class="row">
-                        <a href="adoptar" class="btn btn-primary">Adoptar</a>
-                    </div>
-                </div>
-
-                <div class="col-md-1">
-            </div>
 
         </div>
+        </div>
         
-    </div>
+
 
 
     
 </template>
+
+<Style>
+.container {
+  display: flex;
+}
+</Style>

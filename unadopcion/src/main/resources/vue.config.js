@@ -4,6 +4,7 @@ module.exports = {
             '^/api': {
                 ws:false,
                 target: 'http://localhost:8080',
+                //target: 'http://unadopcion.ml:8080',
                 pathRewrite:{'^/api': ''},
                 changeOrigin: true,
                 secure:false
