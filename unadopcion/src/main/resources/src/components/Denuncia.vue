@@ -19,7 +19,7 @@
               </p>
             </div>
 
-            <div class="form-row">
+            <br><div class="form-row">
               <label class="control-label col-sm-2" for="nombreUsuario"
                 ><strong>Nombre Usuario a Denunciar:</strong></label
               >

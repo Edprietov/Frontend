@@ -30,6 +30,13 @@ export default new Vuex.Store({
                 }else{
                     console.log("Hay un error actualizando a la mascota, no hay usuario logeado")
                 }
+            },
+            actualizarMascota(state, valor){
+                if(state.id != null){
+                    state.mascota = valor;
+                }else{
+                    console.log("Hay un error actualizando a la mascota, no hay usuario logeado")
+                }
             }
         },
         getters:{//para pedir el valor
@@ -42,8 +49,13 @@ export default new Vuex.Store({
             },
             getMascotaAdopcion: state => {
                 return state.mascota
+            },
+            getMascota: state => {
+                return state.mascota
             }
         }
+
+
 
     });
 

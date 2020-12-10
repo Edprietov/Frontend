@@ -1,68 +1,60 @@
 <template>
-  <div class="LoggedHeader">
-    <!--Header-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="principal">
-        <img src="@/assets/UNAdopcion.svg" alt="Logo UNadopcion" height="40" />
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-md-auto">
-          <li class="nav-item" id="btnPrincipal">
-            <a
-              class="nav-link"
-              v-bind:href="/inicio/ + this.$store.getters.getGoogleId"
-              >Inicio</a
-            >
-          </li>
-          <li class="nav-item" id="btnRegisPet">
-            <a class="nav-link" href="/registro-mascota">Registrar mascota</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/buscar-mascota">Buscar Mascota</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/mostrar-mascota">Mostar Mascota</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/consultar-mascota">Consultar Mascota</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/solicitud">Solicitudes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/denuncia">Denunciar</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/consultar-maltrato">Consultar Maltrato</a>
-          <li class="nav-item">
-            <a class="nav-link" href="/cuidados">Cuidados</a>
-          <li class="nav-item">
-            <a class="nav-link" href="/contacto">Contacto</a>
-</li>
-          <li class="nav-item">
-            <a class="nav-link" href="/registro-veterinaria">Registro Veterinaria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/consultar-veterinaria">Consulta Veterinaria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/buscar-veterinaria">Buscar Veterinaria</a>
-          </li>
 
-        </ul>
-      </div>
-    </nav>
+  <div id="Header" class="Header">
+    <b-navbar   sticky toggleable="lg"  class="navbar navbar-expand-lg navbar-light bg-light" height="10px">
+      <b-navbar-brand to="/" class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" type="button" href="principal">
+          <img src="@/assets/UNAdopcion.svg" alt="Logo UNadopcion" height="35" />
+        </a>
+      </b-navbar-brand>
+
+      <b-navbar-toggle  target="nav-collapse--menu"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse--menu" v-model="showCollapse" is-nav>
+        <b-navbar-nav class="ml-auto custom-dropdown-menus anavbar-light bg-light" id="nav-nav">
+          <ul class="navbar-nav ml-md-auto">
+            <li class="m-md-2" id="btnPrincipal">
+              <a
+                  class="nav-link"
+                  v-bind:href="/inicio/ + this.$store.getters.getGoogleId"
+              >Inicio</a
+              >
+            </li>
+
+            <b-nav-item-dropdown id="dropdown-1" text="Mascota" class="m-md-2">
+              <b-dropdown-item id="btnRegisPet"  href="/registro-mascota">Registrar mascota</b-dropdown-item>
+              <b-dropdown-item  href="/buscar-mascota">Buscar Mascota</b-dropdown-item>
+              <b-dropdown-item  href="/mostrar-mascota">Mostar Mascota</b-dropdown-item>
+            </b-nav-item-dropdown>
+
+            <b-nav-item-dropdown id="dropdown-2" text="Maltrato" class="m-md-2">
+              <b-dropdown-item id="btnDenuncia"  href="/denuncia">Denunciar</b-dropdown-item>
+              <b-dropdown-item id="btnConsultarMaltrato" href="/consultar-maltrato">Consultar</b-dropdown-item>
+            </b-nav-item-dropdown>
+
+            <b-nav-item-dropdown id="dropdown-2" text="Veterinaria" class="m-md-2">
+              <b-dropdown-item id="btnRegistrarVeterinaria"  href="/registro-veterinaria">Registrar</b-dropdown-item>
+              <b-dropdown-item id="btnConsultarVeterinaria" href="/consultar-veterinaria">Consultar</b-dropdown-item>
+              <b-dropdown-item id="btnBuscarVeterinaria" href="/buscar-veterinaria">Buscar</b-dropdown-item>
+            </b-nav-item-dropdown>
+
+            <li  class="m-md-2">
+              <a class="nav-link" href="/solicitud">Solicitudes</a>
+            </li>
+
+            <li class="m-md-2">
+              <a class="nav-link" href="/cuidados">Cuidados</a>
+            </li>
+            <li class="m-md-2">
+              <a class="nav-link" href="/contacto">Contacto</a>
+            </li>
+
+
+
+          </ul>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
   </div>
 </template>
 
@@ -75,3 +67,7 @@ export default {
 };
 </script>
 
+<style scoped>
+@import url(https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css);
+
+</style>

@@ -1,7 +1,7 @@
 <template>
   <div id="buscarveterinaria">
     <Header></Header>
-    <div class="ui grid">
+    <br/><div class="ui grid">
       <div class="six wide column">
         <form class="ui segment large form">
           <div class="field">

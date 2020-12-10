@@ -7,7 +7,7 @@
       <div class="col-7">
         <!-- primer carta-->
         <div class="col-10" >
-          <div class="card" >
+          <div class="card" id="card-editar-mascota">
             <div class="card-header">
               <b>Edita los datos de tu mascota</b>
             </div>
@@ -15,19 +15,12 @@
               <form class="text-right" id="formulario" @submit="formaEnviar">
 
 
-                    <div class="form-row">
-                      <label class="control-label col-sm-2" ><strong>Animal ID:</strong></label>
-                      <div class="col-sm-10">
-                        <input  required type="text"  class="form-control"  v-model="animalId">
-                      </div>
-                    </div>
-
                 <br/><div class="form-row">
-                  <label class="control-label col-sm-2" ><strong>Nombre:</strong></label>
-                  <div class="col-sm-10">
-                    <input  required type="text"  class="form-control"  v-model="animalnombre">
-                  </div>
+                <label class="control-label col-sm-2" ><strong>Nombre:</strong></label>
+                <div class="col-sm-10">
+                  <input  required type="text"  class="form-control"  v-model="animalnombre">
                 </div>
+              </div>
 
                 <br />
                 <div class="form-row">
@@ -80,7 +73,7 @@
                   <div class="col-sm-20">
                     <input
                         required
-                        type="number"
+                        type="number" min="0"
                         id="animalEdad"
                         class="form-control"
                         v-model="animaledad"
@@ -89,11 +82,11 @@
                 </div>
 
                 <br/><div class="form-row">
-                  <label class="control-label col-sm-2" ><strong>Lugar:</strong></label>
-                  <div class="col-sm-10">
-                    <input  required type="text"  class="form-control"  v-model="animallugar">
-                  </div>
+                <label class="control-label col-sm-2" ><strong>Lugar:</strong></label>
+                <div class="col-sm-10">
+                  <input  required type="text"  class="form-control"  v-model="animallugar">
                 </div>
+              </div>
 
                 <br/><div class="form-row">
                 <label class="control-label col-sm-2" for="animalMicrochipId"
@@ -101,7 +94,7 @@
                 >
                 <div class="col-sm-20">
                   <input
-                      type="text"
+                      type="number" min="0"
                       id="animalMicrochipId"
                       class="form-control"
                       v-model="animalmicrochipid"
@@ -134,11 +127,6 @@
               </div>
 
 
-
-
-
-                <!-- <img class="img-fluid" v-if="this.$store.getters.getFotoFuturoAdoptado !== ''" v-bind:src="'data:image;base64,'+ this.$store.getters.getFotoFuturoAdoptado">-->
-
                 <br>
                 <br><button  class="btn btn-success">Enviar</button>
 
@@ -162,14 +150,14 @@
 
 import swal from "sweetalert2";
 import EditarMascotaServicio from "@/servicio/EditarMascotaServicio";
-//import MostrarMascotaServicio from "@/servicio/MostrarMascotaServicio";
+
 
 
 export default {
   data() {
     return {
-
-      animalId: 4,
+      mascota: "",
+      animalId: "",
       animalnombre: "",
       animaltipo: "",
       animallugar: "",
@@ -181,16 +169,39 @@ export default {
     };
   },
   mounted() {
+    document.getElementById("card-editar-mascota").style.display = "none";
+    this.mostrarDatosMascota();
     console.log("Componente Editar usuario OK.");
   },
   methods: {
+
+    mostrarDatosMascota() {
+      if (
+          this.$store.getters.getGoogleId != undefined &&
+          this.$store.getters.getMascotaAdopcion != undefined
+      ) {
+        this.mascota = this.$store.getters.getMascotaAdopcion;
+        this.animalId = this.mascota.animId;
+        this.animalnombre = this.mascota.animNombre;
+        this.animaltipo = this.mascota.animTipo;
+        this.animallugar = this.mascota.animLugar;
+        this.animalsexo = this.mascota.animSexo;
+        this.animaledad = this.mascota.animEdad;
+        this.animaldescripcion = this.mascota.animDescrip;
+        this.animalmicrochipid = this.mascota.animMicrochipId;
+        this.animalesterilizacion = this.mascota.animEsterilizacion;
+        document.getElementById("card-editar-mascota").style.display = "block";
+      }else{
+        document.getElementById("card-editar-mascota").style.display = "none";
+      }
+    },
 
     formaEnviar(e) {
       e.preventDefault();
       //diccionario para ser convertido en JSON
       let info = {
-        animalId: 4,
-        nombreusuario: this.nombreusuario,
+        mascota: this.$store.getters.getMascota,
+        animalId: this.mascota.animId,
         animalnombre: this.animalnombre,
         animaltipo: this.animaltipo,
         animallugar: this.animallugar,
@@ -216,37 +227,10 @@ export default {
           });
     },
 
-    /*mostarMascota(animalId){
-      MostrarMascotaServicio.mostarMascota(animalId)
-          .then((respuesta) => {
-            if (respuesta.status === 200)
-              console.log(respuesta.data);
-            this.datosServidor = respuesta.data;
-            //forma reactiva de popular los datos en editar usuario
-            this.animalnombre = this.datosServidor.animalnombre;
-            this.animaltipo = this.datosServidor.animaltipo;
-            this.animalsexo = this.datosServidor.animalsexo;
-            this.animaledad = this.datosServidor.animaledad;
-            this.animallugar = this.datosServidor.animallugar;
-            this.animalmicrochipid = this.datosServidor.animalmicrochipid;
-            this.animalesterilizacion = this.datosServidor.animalesterilizacion;
-          })
-          .catch((error) => {
-
-            alert("Pailander " + error.message)
-
-          });
-    }
-
   },
 
-  created() {
-    //cargar datos del usuario
-    this.mostarMascota(4);
-  },*/
-    name: "EditarUsuario",
-    components: {}
-  }
+  name: "EditarMascota",
+  components: {}
 };
 </script>
 
