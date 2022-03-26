@@ -313,7 +313,7 @@ body {
   padding: 20px;
   font-family: sans-serif;
   min-height: 100vh;
-  background-image: url("../assets/fondo_patitas3.jpeg");
+  background-image: url("../assets/fondo.jpg");
   background-attachment: fixed;
   text-align: justify;
 }

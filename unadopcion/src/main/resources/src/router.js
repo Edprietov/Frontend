@@ -6,25 +6,12 @@ import RegistroMascota from "@/views/RegistroMascota";
 import Denuncia from "@/components/Denuncia";
 import CuidadosMascota from "@/views/CuidadosMascota";
 import Contacto from "@/views/Contacto";
-import BusquedaMascota from "@/views/BusquedaMascota";
-import Logeo from "@/views/Logeo";
 import EditarUsuario from "@/views/EditarUsuario";
-import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
-import MisAdopciones from "@/views/MisAdopciones";
-import ConsultarMaltrato from "@/components/ConsultarContactos";
-import BuscarVeterinaria from "@/components/BuscarVeterinaria";
-import Admin from "@/views/Admin";
-import IngresarVacuna from "@/components/IngresarVacuna";
-import Solicitud from "@/views/Solicitud";
+import ConsultarContactos from "@/components/ConsultarContactos";
 import RegistroVeterinaria from "@/views/RegistroVeterinaria";
-import ConsultarVeterinaria from "@/components/ConsultarVeterinaria";
-import MostrarMascota from "@/components/MostrarMascota";
 import EditarMascota from "@/components/EditarMascota";
 import MostrarMascotaNombre from "@/components/MostrarMascotaNombre";
-import ConsultarVacuna from "@/components/ConsultarVacuna";
-
-
 
 
 Vue.use(Router);
@@ -51,19 +38,14 @@ export default new Router({
             component: RegistroMascota
         },
         {
-            path: "/buscar-mascota",
-            name: "buscarmascota",
-            component: BusquedaMascota
-        },
-        {
             path: "/denuncia",
             name: "denuncia",
             component: Denuncia
         },
         {
-            path: "/consultar-maltrato",
-            name: "consultarmaltrato",
-            component: ConsultarMaltrato
+            path: "/consultar-contactos",
+            name: "consultarcontactos",
+            component: ConsultarContactos
         },
         {
             path: "/cuidados",
@@ -74,11 +56,6 @@ export default new Router({
             path: "/contacto",
             name: "contacto",
             component: Contacto
-        },
-        {
-            path: "/logeo",
-            name: "logeo",
-            component: Logeo
         },
         {
             path: "/editar-usuario",
@@ -92,49 +69,9 @@ export default new Router({
 
         },
         {
-            path: "/adoptar",
-            name: "adoptar",
-            component: Adoptar
-        },
-        {
-            path: "/mis-adopciones",
-            name: "misadopciones",
-            component: MisAdopciones
-        },
-        {
-            path: "/ingresar-vacuna",
-            name: "IngresarVacuna",
-            component: IngresarVacuna
-        },
-        {
-            path: "/Solicitud",
-            name: "Solicitud",
-            component: Solicitud
-        },
-        {
             path: "/registro-veterinaria",
             name: "registro-veterinaria",
             component: RegistroVeterinaria
-        },
-        {
-            path: "/admin",
-            name: "admin",
-            component: Admin
-        },
-        {
-            path: "/buscar-veterinaria",
-            name: "buscarveterinaria",
-            component: BuscarVeterinaria
-        },
-        {
-            path: "/consultar-veterinaria",
-            name: "consultarveterinaria",
-            component: ConsultarVeterinaria
-        },
-        {
-            path: "/mostrar-mascota",
-            name: "mostarmascota",
-            component: MostrarMascota
         },
         {
             path: "/consultar-mascota",
@@ -145,11 +82,6 @@ export default new Router({
             path: "/editar-mascota",
             name: "editarmascota",
             component: EditarMascota
-        },
-        {
-            path: "/consultar-vacuna",
-            name: "consultarvacuna",
-            component: ConsultarVacuna
         },
     ]
 })
