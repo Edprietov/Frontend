@@ -12,7 +12,7 @@ import EditarUsuario from "@/views/EditarUsuario";
 import Adoptar from "@/views/Adoptar";
 import Inicio from "@/views/Inicio";
 import MisAdopciones from "@/views/MisAdopciones";
-import ConsultarMaltrato from "@/components/ConsultarMaltrato";
+import ConsultarMaltrato from "@/components/ConsultarContactos";
 import BuscarVeterinaria from "@/components/BuscarVeterinaria";
 import Admin from "@/views/Admin";
 import IngresarVacuna from "@/components/IngresarVacuna";

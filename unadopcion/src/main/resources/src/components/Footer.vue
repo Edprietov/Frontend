@@ -11,12 +11,17 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-md-auto">
                     <li class="nav-item" id="">
+                        <a href="https://co.linkedin.com/company/imagine-cx/" class="mx-2">
+                            <img src="@/assets/linkedin.png" alt="linkedin" height="50" width="50">
+                        </a>
+                    </li>
+                    <li class="nav-item" id="">
                         <a href="https://web.whatsapp.com/" class="mx-2">
                             <img src="@/assets/whatsapp.svg" alt="whatsapp" height="50" width="50">
                         </a>
                     </li>
                     <li class="nav-item" id="">
-                        <a href="https://facebook.com/" class="mx-2">
+                        <a href="https://www.facebook.com/pages/category/Company/Imagine-CX-1841472189510552/" class="mx-2">
                             <img src="@/assets/facebook.svg" alt="facebook" height="50" width="50">
                         </a>
                     </li>
@@ -31,7 +36,7 @@
                         </a>
                     </li>
                     <li class="nav-item" id="">
-                        <a href="https://instagram.com/" class="mx-2 ">
+                        <a href="https://www.instagram.com/accounts/login/?next=/imaginecx_/" class="mx-2 ">
                             <img src="@/assets/instagram.svg" alt="instagram" height="50" width="50">
                         </a>
                     </li>

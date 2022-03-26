@@ -2,8 +2,9 @@
   <div class="Header">
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="principal">
-        <img src="@/assets/UNAdopcion.svg" alt="Logo UNadopcion" height="40" />
+    <a class="navbar-brand" href="principal">
+        <img src="@/assets/imagine.jpg" alt="Logo UNadopcion" height="40" />
+      <a class="navbar-brand" href="principal">Imagine CX</a>
       </a>
       <button
         class="navbar-toggler"

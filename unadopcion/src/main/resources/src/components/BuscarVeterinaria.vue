@@ -63,7 +63,7 @@
 import Header from "@/components/Header";
 //import Footer from "@/components/Footer";
 import axios from "axios";
-import { API_KEY } from "@/utilities/variables";
+
 
 
 export default {
@@ -74,7 +74,7 @@ export default {
       lat: 0,
       lng: 0,
       places: [],
-      key: API_KEY,
+      key: "",
     };
   },
   computed: {
