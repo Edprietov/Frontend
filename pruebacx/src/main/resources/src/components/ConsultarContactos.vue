@@ -76,6 +76,12 @@
         Filtrar
       </button>
     </div>
+        <br><div class="container">
+      <div class="col-md-20">
+        <div class="card">
+          <div class="card-header"><b>CONTACTOS</b></div>
+
+          <div class="card-body">
     <table class="table" aria-describedby="consultarM">
       <thead>
         <tr>
@@ -86,8 +92,8 @@
           <th scope="col">Celular</th>
           <th scope="col">Ciudad</th>
           <th scope="col">País</th>
-          <th scope="col">Actualizar</th>
-          <th scope="col">Eliminar</th>
+          <th scope="col" v-if=mostrar>Actualizar</th>
+          <th scope="col" v-if=mostrar>Eliminar</th>
         </tr>
       </thead>
       <tbody>
@@ -99,20 +105,28 @@
           <td>{{ valor[6] !== null ? valor[6] : "-" }}</td>
           <td>{{ valor[3] !== null ? valor[3] : "-" }}</td>
           <td>{{ valor[4] !== null ? formatearPais(valor[4]) : "-" }}</td>
-          <td><button class="btn btn-outline-success">Reset</button></td>
-          <td><button class="btn btn-outline-success">Reset</button></td>
+          <td v-if=mostrar><button type="button"  class="btn btn-primary bg-red" @click="editar(valor[0])"><img  src="@/assets/pencil-square.svg"/></button></td>
+          <td v-if=mostrar><button  type="button" class="btn btn-secondary" v-on:click="eliminar(valor[0], valor[1], valor[2])" ><img  src="@/assets/trash3.svg"/></button></td>
         </tr>
       </tbody>
     </table>
-    <footer><Footer></Footer></footer>
+    </div>
+    </div>
+    </div>
+    </div>
+    <Footer class="si"></Footer>
   </div>
 </template>
 
 <script>
 import Consultar from "@/servicio/ConsultarContactos";
+import ConsultarR from "@/servicio/ConsultarRespaldo";
+import Eliminar from "@/servicio/EliminarContactoServicio";
 import Paises from "@/servicio/PaisServicio";
 import Footer from "./Footer";
 import LoggedHeader from "@/components/Header";
+import swal from "sweetalert2";
+
 
 export default {
   data() {
@@ -125,6 +139,7 @@ export default {
       copiaDatos: "",
       auxDatos: [],
       paises: "",
+      mostrar: true,
     };
   },
   components: {
@@ -142,17 +157,32 @@ export default {
             //console.log("Respuesta" + JSON.stringify(respuesta.data.items[0].rows));
             this.servidorDatos = respuesta.data.items[0].rows;
             this.copiaDatos = this.servidorDatos;
+            this. ConsultarPaisesTodos();
+
+            //PendienteConsultarR.Actualizar(respuesta.data);
           } else {
             console.log("Error");
           }
         })
         .catch((error) => {
+          swal.fire( {timer: 8000, title:"Conexión Fallida",  type:'info', text:"En este momento no hay conexión con el servidor, sin embargo tenemos la ultima consulta realizada"});
+          this.mostrar = false;
+          ConsultarR.Consultar()
+        .then((respuesta) => {
+          if (respuesta.status === 200) {
+            console.log("Respuesta" + JSON.stringify(respuesta.data.items[0].rows));
+            this.servidorDatos = respuesta.data.items[0].rows;
+            this.copiaDatos = this.servidorDatos;
+             this. ConsultarPaisesTodos();
+          } else {
+            console.log("Error");
+          }
+        })
           if (error.response.status === 400) {
-            console.log("Error:" + error.response.message);
+            console.log("Error aquí");
           }
         });
       //this.servidorDatos = [["14","Ángela","Monroy","Bogotá","2","angelabibiana.monroyvalbuena@co.scotiabankcolpatria.com.invalid","3042955416"],["15","Hugo","Casas","Bogotá","2","hugcas@eltiempo.com.invalid",null],["16","Martín","Parra","Bogotá","2","martin.parra@aviatur.com.invalid",null],["17","María Camila","Serrano","Bogotá","2","maria.serrano@experian.com.invalid",null],["18","Martha Lupe","Mendez","Bogotá","2","martam@javeriana.edu.co.invalid",null],["21","Luisa","Ríos","Bogotá","2","luisa.rios@corficolombiana.com.invalid",null],["22","Cristina","Fonseca","Bogotá","2","cristina.fonseca@facilpass.com.invalid",null],["24","Mario","Rodriguez","Bogotá","2","mario.rodriguez.gomez@zurich.com.invalid",null],["25","Martha Cecilia","Rojas Ramirez","Bogotá","2","mcrojasr@compensar.com.invalid",null],["26","Daniela","Morales","Bogotá","2","daniela.morales@segurosbolivar.com.invalid",null],["27","Celso","Ramirez","Santo Domingo",null,"ramirezc@soluciones-globales.net.invalid",null],["28","Liliana","Diaz","Bogotá","2","ldiazr@cremil.gov.co.invalid",null],["30","Diego","Sandoval",null,null,"dfsandoval@falabella.com.co.invalid",null],["31","William","Tellez","Bogotá","2","gerente.proyectos7@infotic.co.invalid",null],["33","Andres","Rivera(provisional)",null,"2",null,null],["34","Alejandro","Aguirre","Bogotá","2","soportecorporativo@usb.edu.co.invalid",null],["36","Lina","Currea","Bogotá","2","lina.currea@cuperz.com.invalid",null],["46","Emerson","Dominguez","BOGOTÁ","2","dominguezemerson@gmail.com.invalid",null],["47","Cristhian","Alarcon","BOGOTÁ","2","cristhian.alarcon@multivacacionesdecameron.com.invalid",null],["48","Jorge","Jaimes","Bogotá","2","jljaimes@almaviva.com.co.invalid",null],["51","Luis","Valencia","Bogotá","2","luis.valencia@dnbc.gov.co.invalid",null],["52","Angela","Talero","Bogotá","2","angela.talero@revistadiners.com.co.invalid",null],["53","Luis Eduardo","Sáenz Cifuentes","Bogotá","2","lsaenz@fundaciongruposocial.co.invalid",null],["54","Oscar","Rocha","Bogotá","2","orocha@globalseguros.co.invalid",null],["57","Kira Elvira","Angulo Arias","Bogotá","2","kira.angulo@entelgy.com.invalid",null]];
-        this. ConsultarPaisesTodos();
     },
     filtrar() {
       if (
@@ -187,14 +217,51 @@ export default {
       }
       },
 
+    eliminar(id, nombre, apellido){
+swal.fire({
+  title: "Deseas eliminar el contacto con id " + id + " con nombre " + nombre + " " + apellido +"?",
+  showCancelButton: true,
+  confirmButtonText: 'Eliminar',
+  cancelButtonText: "cancelar",
+  icon: "question",
+  timer: 5000,
+}).then((result) => {
+  if (result.isConfirmed) {
+Eliminar.EliminarContactoporId(id)
+ .then((respuesta) => {
+          if (respuesta.status === 200) {
+              swal.fire({timer: 8000, title:'Contacto Eliminado!',  icon: 'success'});
+              this.ConsultarContactos();
+          }
+          if (respuesta.status === 404) {
+          swal.fire('Contacto No encontrado!', 'Al parecer el usuario ya fue eliminado', 'info')
+          }
+        })
+        .catch((error) => {
+     
+        if(error.message.includes("404")){
+           swal.fire({timer: 8000, title:'Contacto No encontrado!',  icon:'info', text:'Al parecer el usuario ya fue eliminado'})
+        }
+        else{
+          
+          swal.fire({timer: 8000, title:"Conexión Fallida",  icon:'info', text:"En este momento no hay conexión con el servidor, intenta más tade"});
+        }
+         })
+  } else if (result.isDenied) {
+    swal.fire('Changes are not saved', '', 'info')
+  }
+})
+    },
+
+    editar(id){
+      console.log(id);
+    },
+
    ConsultarPaisesTodos() {
       Paises.ConsultarPaises()
         .then((respuesta) => {
           if (respuesta.status === 200) {
-            console.log("Respuesta" + JSON.stringify(respuesta.data.items[0].rows));
             this.paises = respuesta.data.items[0].rows;
-          } else {
-            console.log("Error");
           }
         })
         .catch((error) => {
@@ -281,4 +348,42 @@ body {
   width: 100%;
   margin-top: 20%;
 }
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active, .btn-secondary:visited {
+    background-color: #b30606 !important;
+}
+
+.card{
+ width:  110%;
+ margin-left: -5%;
+ flex: 1;
+}
+
+.card-body{
+margin-top: -3.5%;
+}
+
+.si{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+body{
+  text-align:center;
+  display:grid;
+  grid-template-rows: auto 1fr auto;
+  min-height:100vh;
+}
+
+header{
+  padding:15px;
+  background:#2196f3;
+  color:#fff;
+}
+footer{
+  padding:15px;
+  background:#333;
+  color:#fff;
+}
+
 </style>

@@ -23,12 +23,86 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bdaf030-1b8e-47f6-ab41-99830752ac81" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/.firebase/hosting.ZGlzdA.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/unadopcion/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/public/imagine.ico" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/public/imagine.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/public/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/Dog.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/Dog.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/Hams.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/Hams.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/HeroSection.png" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/HeroSection.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/UNAdopcion.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/UNAdopcion.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/UNAdopcionBN.png" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/UNAdopcionBN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/Wpp_ico.png" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/Wpp_ico.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/cat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/cat.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/facebook.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/fondo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/fondo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/gmail.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/gmail.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/gorjeo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/gorjeo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/imagine.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/imagine.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/imagine.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/imagine.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/instagram.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/instagram.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/linkedin.png" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/linkedin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/perro1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/perro1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/perro2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/perro2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/profile.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/profile.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/subir-imagen.png" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/subir-imagen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/whatsapp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/whatsapp.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/assets/x-circle.svg" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/assets/x-circle.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/BuscarUsuario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/BuscarUsuario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/ConsultarContactos.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/ConsultarContactos.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Denuncia.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/Denuncia.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/EditarMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/EditarMascota.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/EditarUsuario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/EditarUsuario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/Footer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/FormularioContact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/FormularioContact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/LoggedHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/LoggedHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/MostrarMascotaNombre.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/MostrarMascotaNombre.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/PprincipalMasc.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/PprincipalMasc.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Solicitudes/SolicitudMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/Solicitudes/SolicitudMascota.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/Solicitudes/SolicitudTabla.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/Solicitudes/SolicitudTabla.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/components/VacunasMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/components/VacunasMascota.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/plugins/bootstrap-vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/plugins/bootstrap-vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ActualizarPorAdminServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/ActualizarPorAdminServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/BuscarUsuarioServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/BuscarUsuarioServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ConsultarContactos.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/ConsultarContactos.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ConsultarMaltrato.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/ConsultarMaltrato.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ConsultarVeterinaria.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/ConsultarVeterinaria.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/ContactoServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/ContactoServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/EditarMascotaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/EditarMascotaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/EditarUsuarioServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/EditarUsuarioServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/IngresarVacunaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/IngresarVacunaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/MostarPerfilServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/MostarPerfilServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/MostrarMascotaNombreServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/MostrarMascotaNombreServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/MostrarMascotaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/MostrarMascotaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/PaisServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/PaisServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarDenunciaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/RegistrarDenunciaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarMascotaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/RegistrarMascotaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarUsuarioServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/RegistrarUsuarioServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/RegistrarVeterinariaServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/RegistrarVeterinariaServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/servicio/SolicitudServicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/servicio/SolicitudServicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Contacto.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/Contacto.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/CuidadosMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/CuidadosMascota.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/EditarUsuario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/EditarUsuario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Inicio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/Inicio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/Principal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/Principal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistrarVacunacion.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/RegistrarVacunacion.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroMascota.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/RegistroMascota.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroUsuario.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/RegistroUsuario.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/src/views/RegistroVeterinaria.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/src/views/RegistroVeterinaria.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/main/resources/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/main/resources/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unadopcion/src/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pruebacx/src/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +150,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PruebaCX" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />

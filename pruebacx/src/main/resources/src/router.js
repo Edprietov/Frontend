@@ -11,7 +11,6 @@ import Inicio from "@/views/Inicio";
 import ConsultarContactos from "@/components/ConsultarContactos";
 import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 import EditarMascota from "@/components/EditarMascota";
-import MostrarMascotaNombre from "@/components/MostrarMascotaNombre";
 
 
 Vue.use(Router);
@@ -72,11 +71,6 @@ export default new Router({
             path: "/registro-veterinaria",
             name: "registro-veterinaria",
             component: RegistroVeterinaria
-        },
-        {
-            path: "/consultar-mascota",
-            name: "consultarmascota",
-            component: MostrarMascotaNombre
         },
         {
             path: "/editar-mascota",
