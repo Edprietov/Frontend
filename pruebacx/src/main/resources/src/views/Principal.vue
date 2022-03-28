@@ -7,9 +7,9 @@
 
     <div class="container">
       <div class="row">
-          <div class="col"> <img src="@/assets/Dog.jpg" alt="Perro" width="300"></div>
-          <div class="col"><img src="@/assets/cat.jpg" alt="Gato" width="300"></div>
-          <div class="col"><img src="@/assets/Hams.jpg" alt="Hamster" width="300"></div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col"></div>
       </div>
     </div>
 
@@ -24,7 +24,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Medio from "../components/PprincipalMasc";
-
 export default {
   name: "Principal",
   components: {
@@ -36,5 +35,4 @@ export default {
 padding-top: 10%;
 }
 <style scoped>
-
 </style>

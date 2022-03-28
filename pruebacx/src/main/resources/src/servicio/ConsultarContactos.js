@@ -1,15 +1,16 @@
 import axios from "axios";
+import URL from "@/servicio/Url";
 
-const API_URL = "http://localhost:8080";
 const CONTROLADOR = "/consultar";
 
 class ConsultarContactoServicio {
     ConsultarTodosContactos() {
-        return axios.get(API_URL + CONTROLADOR);
+        console.log("Otra: " + URL.getUrl());
+        return axios.get(URL.getUrl() + CONTROLADOR);
 
     }
     ConsultarContactoporId(id) {
-        return axios.get(API_URL + CONTROLADOR + "/"+ id);
+        return axios.get(URL.getUrl() + CONTROLADOR + "/"+ id);
 
     }
 }

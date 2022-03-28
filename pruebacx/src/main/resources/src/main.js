@@ -10,7 +10,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import store from './store'
 import SuiVue from 'semantic-ui-vue'
-import VueGoogleMap from 'vuejs-google-maps'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -22,12 +21,6 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(axios)
 Vue.config.productionTip = false
-Vue.use(VueGoogleMap, {
-  load: {
-    apiKey: process.env.VUE_APP_API_KEY,
-    libraries: ['places']
-  }
-})
 
 
 new Vue({

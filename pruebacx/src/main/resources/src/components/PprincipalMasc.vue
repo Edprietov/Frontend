@@ -36,7 +36,7 @@
 
             <div class="col">
                 <div class="row">
-                    <img src="@/assets/subir-imagen.png" alt="" width="100px" class="mx-auto">
+                    <img src="@/assets/HeroSection.png" alt="" width="100px" class="mx-auto">
                 </div>
                 <div class="row">
                     <p class="text-justify">Descripción de la mascota que se quiere adopatar y que aparece al comienzo. Es
@@ -53,7 +53,7 @@
 
             <div class="col">
                 <div class="row">
-                    <img src="@/assets/subir-imagen.png" alt="" width="100px" class="mx-auto">
+                    <img src="@/assets/HeroSection.png" alt="" width="100px" class="mx-auto">
                 </div>
                 <div class="row">
                     <p class="text-justify">Descripción de la mascota que se quiere adopatar y que aparece al comienzo. Es
@@ -71,7 +71,7 @@
 
                 <div class="col">
                     <div class="row">
-                        <img src="@/assets/subir-imagen.png" alt="" width="100px" class="mx-auto">
+                        <img src="@/assets/HeroSection.png" alt="" width="100px" class="mx-auto">
                     </div>
                     <div class="row">
                         <p class="text-justify">Descripción de la mascota que se quiere adopatar y que aparece al comienzo. Es

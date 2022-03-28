@@ -1,15 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Principal from "@/views/Principal";
-import RegistroUsuario from "@/views/RegistroUsuario";
+import CrearContacto from "@/views/CrearContacto";
 import RegistroMascota from "@/views/RegistroMascota";
 import Denuncia from "@/components/Denuncia";
-import CuidadosMascota from "@/views/CuidadosMascota";
 import Contacto from "@/views/Contacto";
 import EditarUsuario from "@/views/EditarUsuario";
 import Inicio from "@/views/Inicio";
+import Principal from "@/views/Principal";
 import ConsultarContactos from "@/components/ConsultarContactos";
-import RegistroVeterinaria from "@/views/RegistroVeterinaria";
 import EditarMascota from "@/components/EditarMascota";
 
 
@@ -21,14 +19,13 @@ export default new Router({
     routes: [
         {
             path: "/",
-            alias: "/principal",
             name: "principal",
             component: Principal
         },
         {
-            path: "/registro",
-            name: "registrousuario",
-            component: RegistroUsuario
+            path: "/crear-contacto",
+            name: "crearcontacto",
+            component: CrearContacto
         },
         {
 
@@ -47,11 +44,6 @@ export default new Router({
             component: ConsultarContactos
         },
         {
-            path: "/cuidados",
-            name: "cuidadosmascota",
-            component: CuidadosMascota
-        },
-        {
             path: "/contacto",
             name: "contacto",
             component: Contacto
@@ -66,11 +58,6 @@ export default new Router({
             name: "inicio",
             component: Inicio,
 
-        },
-        {
-            path: "/registro-veterinaria",
-            name: "registro-veterinaria",
-            component: RegistroVeterinaria
         },
         {
             path: "/editar-mascota",

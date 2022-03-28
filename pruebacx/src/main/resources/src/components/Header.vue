@@ -20,12 +20,12 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-md-auto">
           <li class="nav-item" id="btnPrincipal">
-            <a class="nav-link" href="principal">Principal</a>
+            <a class="nav-link" href="consultar-contactos">Contactos</a>
           </li>
 
           <li class="nav-item" id="btnGoogleLogUser">
-            <a class="nav-link" href="http://34.123.151.81:8080/autenticar"
-              >Iniciar con Google</a
+            <a class="nav-link" href="crear-contacto"
+              >Crear contacto</a
             >
           </li>
           <li class="nav-item">
