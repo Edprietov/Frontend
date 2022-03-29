@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <Medio> </Medio>
+   
 
 
     <Footer></Footer>
@@ -23,16 +23,11 @@
 <script>
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Medio from "../components/PprincipalMasc";
+
 export default {
   name: "Principal",
   components: {
-    Header, Footer, Medio
+    Header, Footer
   }
 }
 </script>
-#Principal{
-padding-top: 10%;
-}
-<style scoped>
-</style>

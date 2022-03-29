@@ -1,229 +1,247 @@
 <template>
-  <div id="registrousuario" onload="">
-    <!--@private byte[] usuarioFoto;-->
+  <div id="creacionocontacto">
     <Header></Header>
-    <div class="row">
-      <div class="col-7">
-        <br />
-        <!-- primer carta-->
-        <div class="col-8">
-          <div class="card text-center">
-            <div class="card-header">
-              <strong>EU Edita tu información para mantenernos al día!</strong>
-            </div>
 
-            <div class="card-body">
-              <form @submit="enviarForma">
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Nickname:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="text"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="nombre"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Nombre de usuario:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="text"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="nombreReal"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Contraseña:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="password"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="contrasena"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Confirme su Contraseña:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="password"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="contrasena2"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Rol:</strong>
-                  </div>
-                  <div class="col-8">
-                    <select
-                      class="form-control form-control-sm"
-                      @change="comprobarFormato"
-                      v-model="rol"
-                    >
-                      <option>Cuidador</option>
-                      <option>Adoptante</option>
-                      <option>Adoptador</option>
-                    </select>
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Correo:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="text"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="correo"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Teléfono:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="text"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="telefono"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Lugar donde vive:</strong>
-                  </div>
-                  <div class="col-8">
-                    <input
-                      type="text"
-                      class="form-control"
-                      @change="comprobarFormato"
-                      v-model="lugar"
-                    />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-4">
-                    <strong>Información adicional:</strong>
-                  </div>
-                  <div class="col-8">
-                    <textarea type="text" class="form-control" v-model="info" />
-                  </div>
-                </div>
-                <br />
-
-                <div class="row">
-                  <div class="col-12">
-                    <div class="text-right">
-                      <button class="btn btn-danger mr-4">Cancelar</button>
-                      <button
-                        class="btn btn-success"
-                        id="Aceptar"
-                        @click="enviarForma"
-                      >
-                        Aceptar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <br />
-              <div class="alert alert-danger" id="error-contraseña">
-                Las contraseñas no coinciden, por favor vuelve a revisar.
-              </div>
-              <div class="alert alert-danger" id="alerta-error">
-                Algún campo obligatorio de datos no posee ningún dato.
-              </div>
-              <br />
-              <strong
-                >Datos actualizados nos permiten mantenerte seguro.</strong
+    <div class="container">
+      <div class="col-md-8 algo">
+        <div class="card">
+          <div class="card-header" style="background-color: rgb(31, 35, 236)">
+            <div class="text-center">
+              <strong v-if="!ver" id="titulocrear">CREAR CONTACTO</strong
+              ><strong v-if="ver" id="tituloactualizar"
+                >ACTUALIZAR CONTACTO</strong
               >
             </div>
+            <div class="text-center" hidden></div>
           </div>
-        </div>
-      </div>
-      <!-- Segunda carta-->
-      <div class="col-4">
-        <br />
-        <div class="card">
-          <div class="card-header">¡Añade una imagen!</div>
+
           <div class="card-body">
-            <br /><strong class="control-label col-sm-2">Fotografia:</strong>
-            <div class="col-sm-10">
-              <input required type="file" @change="enCambioArchivo" />
+            <form class="text-right">
+              <br />
+              <div class="containerd">
+                <p style="text-align: center" v-if="!ver" class="text-info">
+                  Ingrese los siguientes datos para realizar la creación.
+                </p>
+                <p style="text-align: center" v-if="ver" class="text-info">
+                  Actualice los datos.
+                </p>
+                <br />
+              </div>
+              <div class="row register-form">
+                <div class="col-2">
+                  <strong>Nombre:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Nombre *"
+                    required="true"
+                    @change="comprobarFormato"
+                    pattern="[a-zA-Z ]{2,20}"
+                    v-model="nombre"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-2">
+                  <strong>Apellido:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Apellido *"
+                    id="apellido"
+                    required="true"
+                    pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+${2,20}"
+                    @change="comprobarFormato"
+                    v-model="apellido"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-2">
+                  <strong>Correo:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Correo *"
+                    id="correo"
+                    required="true"
+                    maxlength="40"
+                    pattern="[^@]+@[^@]+\.[a-zA-Z]{2,40}"
+                    @change="comprobarFormato"
+                    v-model="correo"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-2">
+                  <strong>Teléfono:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="txtEmpPhone"
+                    placeholder="Celular *"
+                    maxlength="10"
+                    id="celular"
+                    pattern="[0-9]+"
+                    @change="comprobarFormato"
+                    v-model="celular"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-2">
+                  <strong>Dirección:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Dirección "
+                    id="direccion"
+                    v-model="direccion"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-2">
+                  <strong>Ciudad:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Ciudad *"
+                    id="ciudad"
+                    required="true"
+                    maxlength="15"
+                    pattern="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+${2,20}"
+                    @change="comprobarFormato"
+                    v-model="ciudad"
+                  />
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-2">
+                  <strong>País:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    @change="comprobarFormato"
+                    v-model="pais"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-2">
+                  <strong>Código Postal:</strong>
+                </div>
+                <div class="col-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    maxlength="6"
+                    @change="comprobarFormato"
+                    placeholder="Código Postal "
+                    id="codigo"
+                    pattern="[0-9]{6,6}"
+                    v-model="codigo"
+                  />
+                </div>
+              </div>
+              <br />
+
+              <div class="row">
+                <div class="col-12">
+                  <div class="text-center">
+                    <button
+                      class="btn btn-success"
+                      id="Aceptar"
+                      @click="enviarForma"
+                      disabled
+                      v-if="!ver"
+                    >
+                      Crear
+                    </button>
+                    <button
+                      class="btn btn-primary"
+                      id="Aceptar"
+                      disabled
+                      v-if="ver"
+                      @click="actualizar"
+                    >
+                      Actualizar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <br />
+            <br />
+            <div class="alert alert-danger col-8" id="alerta-error">
+              Debe diligenciar los campos obligatorios para poder crear el
+              contacto.
             </div>
+            <br />
+            <strong>Datos actualizados nos permiten mantenerte seguro.</strong>
           </div>
         </div>
       </div>
     </div>
-
     <br />
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import RegistrarUsuarioServicio from "../servicio/RegistrarUsuarioServicio";
+import RegistrarContactoServicio from "../servicio/CrearContactoServicio";
+import Actualizar from "@/servicio/ActualizarContactoServicio";
+import Consultar from "@/servicio/ConsultarContactos";
 import Header from "../components/Header";
 import Footer from "@/components/Footer";
 import swal from "sweetalert2";
 
 export default {
-  name: "RegistroUsuario",
+  name: "CrearContacto",
   components: {
     Header,
     Footer,
   },
-  mounted() {
-    console.log("Componente RegistroUsuario OK.");
-  },
   data() {
     return {
       nombre: "",
-      nombreReal: "",
-      contrasena: "",
-      contrasena2: "",
-      rol: "",
+      apellido: "",
       correo: "",
-      telefono: "",
-      lugar: "",
-      info: "",
-      imagenSeleccionada: null,
+      celular: "",
+      pais: "",
+      ciudad: "",
+      direccion: "",
+      codigo: "",
+      servidorDatos: "",
+      ver: false,
+      bloqueo: true,
     };
   },
   methods: {
@@ -232,23 +250,47 @@ export default {
       let objectoActual = this;
       let info = {
         nombre: this.nombre,
-        nombreReal: this.nombreReal,
-        contrasena: this.contrasena,
-        rol: this.rol,
+        apellido: this.apellido,
         correo: this.correo,
-        telefono: this.telefono,
-        lugar: this.lugar,
-        info: this.info,
-        imagenSeleccionada: this.imagenSeleccionada,
+        celular: this.celular,
+        pais: this.pais,
+        ciudad: this.ciudad,
+        direccion: this.direccion,
+        codigo: this.codigo,
       };
-      this.registrarUsuario(objectoActual, info);
+      this.bloqueo
+        ? console.log("Si, bloqueado")
+        : this.registrarContacto(objectoActual, info);
     },
 
-    registrarUsuario(objetoActual, info) {
-      RegistrarUsuarioServicio.registrarUsuario(info)
+    actualizar(){
+      let id = this.$route.params.id;
+              let info2 = {
+            nombre: this.nombre,
+            apellido: this.apellido,
+            correo: this.correo,
+            celular: this.celular,
+            pais: this.pais,
+            ciudad: this.ciudad,
+            direccion: this.direccion,
+            codigo: this.codigo,
+      };
+this.actualizarcontacto(info2, id);
+    },
+
+    registrarContacto(objetoActual, info) {
+      RegistrarContactoServicio.registrarContacto(info)
         .then((respuesta) => {
           if (respuesta.status === 201) {
-            swal.fire("Registro exitoso", "Bienvenido", "success");
+            swal.fire(
+              "Usuario creado!",
+              "El usuario " +
+                respuesta.data.lookupName +
+                " ha sido creado exitosamente, su id es " +
+                respuesta.data.id,
+              "success"
+            );
+            this.limpiarcampos();
           }
         })
         .catch((error) => {
@@ -262,41 +304,90 @@ export default {
         });
     },
 
-    enCambioArchivo(event) {
-      this.imagenSeleccionada = event.target.files[0];
+    actualizarcontacto(info2, id1) {
+      Actualizar.ActualizarContacto(info2, id1)
+      .then((respuesta) => {
+          if (respuesta.status === 200) {
+                   swal.fire({
+                    timer: 8000,
+                    title: "Contacto Actualizado!",
+                    icon: "success",
+                  });
+                  
+          } else {
+            console.log("Error");
+          }
+        })
+        .catch((error) => {
+          console.log("Error: " + error);
+          swal.fire( {timer: 8000, title:"Conexión Fallida",  type:'info', text:"En este momento no hay conexión con el servidor, sin embargo tenemos la ultima consulta realizada"});
+        });
+
+      //this.$router.push("/consultar-contactos");
     },
-    comprobarContrasena() {
-      if (this.contrasena != this.contrasena2) {
-        document.getElementById("error-contraseña").style.display = "block";
-        document.getElementById("Aceptar").disabled = true;
-      } else {
-        document.getElementById("error-contraseña").style.display = "none";
-        document.getElementById("Aceptar").disabled = false;
-      }
-    },
+
     comprobarDatos() {
       if (
         this.nombre == "" ||
-        this.contrasena == "" ||
-        this.rol == "" ||
+        this.apellido == "" ||
+        this.celular == "" ||
         this.correo == "" ||
-        this.nombreReal == "" ||
-        this.telefono == "" ||
-        this.lugar == ""
+        this.ciudad == "" ||
+        this.pais == ""
       ) {
         document.getElementById("alerta-error").style.display = "block";
         document.getElementById("Aceptar").disabled = true;
-        this.comprobarContrasena();
       } else {
         document.getElementById("alerta-error").style.display = "none";
         document.getElementById("Aceptar").disabled = false;
-        this.comprobarContrasena();
+        this.bloqueo = false;
       }
     },
     comprobarFormato() {
       this.comprobarDatos();
     },
+    limpiarcampos() {
+      (this.nombre = ""),
+        (this.apellido = ""),
+        (this.correo = ""),
+        (this.celular = ""),
+        (this.pais = ""),
+        (this.ciudad = ""),
+        (this.direccion = ""),
+        (this.codigo = "");
+    },
   },
+  beforeMount() {
+    let idx = this.$route.params.id;
+    if (this.$route.params.pagina === "actualizar") {
+      this.ver = true;
+      Consultar.ConsultarContactoporId(idx)
+        .then((respuesta1) => {
+          if (respuesta1.status === 200) {
+            this.servidorDatos = respuesta1.data.items[0].rows[0];
+            this.nombre = this.servidorDatos[1];
+            this.apellido = this.servidorDatos[2];
+            this.correo = this.servidorDatos[5];
+            (this.celular = this.servidorDatos[6]),
+              (this.pais = this.servidorDatos[4]),
+              (this.ciudad = this.servidorDatos[3]),
+              (this.direccion = this.servidorDatos[7]),
+              (this.codigo = this.servidorDatos[8]);
+          }
+        })
+        .catch((error) => {
+          if (error.response.status == 400) {
+            swal.fire(
+              "Servidor caido",
+              "Tenemos problemas para conectarnos al servidor",
+              "error"
+            );
+          }
+        });
+    }
+  },
+
+  mounted() {},
 };
 </script>
 
@@ -305,7 +396,7 @@ export default {
 </style>
 
 <style>
-* {
+ {
   box-sizing: border-box;
 }
 body {
@@ -349,11 +440,6 @@ h1 {
   border-bottom: 3px solid #ea484e;
 }
 
-.form-control {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-}
-
 p.texto {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -393,5 +479,30 @@ h3 {
 footer {
   bottom: 0.1cm;
   align-self: auto;
+}
+
+.container {
+  margin-top: 3%;
+}
+
+form {
+  margin-top: 4%;
+}
+
+#alerta-error {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.algo {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 1%; /* Added */
+}
+
+#titulocrear,
+#tituloactualizar {
+  font-weight: bold;
+  color: white;
 }
 </style>

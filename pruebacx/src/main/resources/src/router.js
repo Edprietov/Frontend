@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import CrearContacto from "@/views/CrearContacto";
 import RegistroMascota from "@/views/RegistroMascota";
-import Denuncia from "@/components/Denuncia";
 import Contacto from "@/views/Contacto";
 import EditarUsuario from "@/views/EditarUsuario";
 import Inicio from "@/views/Inicio";
@@ -28,15 +27,15 @@ export default new Router({
             component: CrearContacto
         },
         {
+            path: "/editar-contacto",
+            name: "editarcontacto",
+            component: CrearContacto
+        },
+        {
 
             path: "/registro-mascota",
             name: "registromascota",
             component: RegistroMascota
-        },
-        {
-            path: "/denuncia",
-            name: "denuncia",
-            component: Denuncia
         },
         {
             path: "/consultar-contactos",
