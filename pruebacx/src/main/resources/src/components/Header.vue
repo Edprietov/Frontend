@@ -3,7 +3,7 @@
     <!--Header-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="principal">
-        <img src="@/assets/imagine.jpg" alt="Logo UNadopcion" height="40" />
+        <img src="@/assets/imagine.jpg" alt="Logo" height="40" />
       <a class="navbar-brand" href="principal">Imagine CX</a>
       </a>
       <button
@@ -32,9 +32,6 @@
             <a class="nav-link" href="contacto">Contactanos</a>
           </li>
 
-          <li class="nav-item" id="btnPrincipal">
-            <a class="nav-link" href="buscar-veterinaria">Buscar Veterinaria</a>
-          </li>
         </ul>
       </div>
     </nav>

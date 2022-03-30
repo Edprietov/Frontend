@@ -2,7 +2,7 @@
   <div id="principal">
     <Header></Header>
     <div class="container-fluid">
-        <div class="row"> <img src="@/assets/HeroSection.png" alt="Banner principal" width="100%"> </div>
+  <div class="row"> <img src="@/assets/Indice.png" alt="Banner principal" width="100%"> </div>
     </div>
 
     <div class="container">
@@ -12,10 +12,6 @@
           <div class="col"></div>
       </div>
     </div>
-
-   
-
-
     <Footer></Footer>
   </div>
 </template>

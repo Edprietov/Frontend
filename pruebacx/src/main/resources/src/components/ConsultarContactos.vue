@@ -1,9 +1,9 @@
 <template>
   <div card>
-    <LoggedHeader></LoggedHeader>
+    <Header></Header>
 
     <div class="form-row" id="caja">
-      <label class="control-label col-sm-1" for="nombreContactoFiltro"
+      <label class="control-label col-sm-0" for="nombreContactoFiltro"
         ><strong>Nombre:</strong></label
       >
       <div class="col-sm-0">
@@ -92,7 +92,6 @@
                   <th scope="col">Correo</th>
                   <th scope="col">Celular</th>
                   <th scope="col">Ciudad</th>
-                  <th scope="col">País</th>
                   <th scope="col" v-if="mostrar">Actualizar</th>
                   <th scope="col" v-if="mostrar">Eliminar</th>
                 </tr>
@@ -106,9 +105,6 @@
                   <td>{{ valor[5] !== null ? formatear(valor[5]) : "-" }}</td>
                   <td>{{ valor[6] !== null ? valor[6] : "-" }}</td>
                   <td>{{ valor[3] !== null ? valor[3] : "-" }}</td>
-                  <td>
-                    {{ valor[4] !== null ? formatearPais(valor[4]) : "-" }}
-                  </td>
                   <td v-if="mostrar">
                     <button
                       type="button"
@@ -144,7 +140,7 @@ import ConsultarR from "@/servicio/ConsultarRespaldo";
 import Eliminar from "@/servicio/EliminarContactoServicio";
 import Paises from "@/servicio/PaisServicio";
 import Footer from "./Footer";
-import LoggedHeader from "@/components/Header";
+import Header from "@/components/Header";
 import swal from "sweetalert2";
 
 export default {
@@ -162,7 +158,7 @@ export default {
     };
   },
   components: {
-    LoggedHeader,
+    Header,
     Footer,
   },
   methods: {
@@ -177,7 +173,7 @@ export default {
             this.servidorDatos = respuesta.data.items[0].rows;
             this.copiaDatos = this.servidorDatos;
             this. ConsultarPaisesTodos();
-            //PendienteConsultarR.Actualizar(respuesta.data);
+            ConsultarR.Actualizar(respuesta.data);
           } else {
             console.log("Error");
           }
@@ -200,225 +196,6 @@ export default {
             console.log("Error aquí");
           }
         });
-      /*this.servidorDatos = [
-        [
-          "14",
-          "Ángela",
-          "Monroy",
-          "Bogotá",
-          "2",
-          "angelabibiana.monroyvalbuena@co.scotiabankcolpatria.com.invalid",
-          "3042955416",
-        ],
-        [
-          "15",
-          "Hugo",
-          "Casas",
-          "Bogotá",
-          "2",
-          "hugcas@eltiempo.com.invalid",
-          null,
-        ],
-        [
-          "16",
-          "Martín",
-          "Parra",
-          "Bogotá",
-          "2",
-          "martin.parra@aviatur.com.invalid",
-          null,
-        ],
-        [
-          "17",
-          "María Camila",
-          "Serrano",
-          "Bogotá",
-          "2",
-          "maria.serrano@experian.com.invalid",
-          null,
-        ],
-        [
-          "18",
-          "Martha Lupe",
-          "Mendez",
-          "Bogotá",
-          "2",
-          "martam@javeriana.edu.co.invalid",
-          null,
-        ],
-        [
-          "21",
-          "Luisa",
-          "Ríos",
-          "Bogotá",
-          "2",
-          "luisa.rios@corficolombiana.com.invalid",
-          null,
-        ],
-        [
-          "22",
-          "Cristina",
-          "Fonseca",
-          "Bogotá",
-          "2",
-          "cristina.fonseca@facilpass.com.invalid",
-          null,
-        ],
-        [
-          "24",
-          "Mario",
-          "Rodriguez",
-          "Bogotá",
-          "2",
-          "mario.rodriguez.gomez@zurich.com.invalid",
-          null,
-        ],
-        [
-          "25",
-          "Martha Cecilia",
-          "Rojas Ramirez",
-          "Bogotá",
-          "2",
-          "mcrojasr@compensar.com.invalid",
-          null,
-        ],
-        [
-          "26",
-          "Daniela",
-          "Morales",
-          "Bogotá",
-          "2",
-          "daniela.morales@segurosbolivar.com.invalid",
-          null,
-        ],
-        [
-          "27",
-          "Celso",
-          "Ramirez",
-          "Santo Domingo",
-          null,
-          "ramirezc@soluciones-globales.net.invalid",
-          null,
-        ],
-        [
-          "28",
-          "Liliana",
-          "Diaz",
-          "Bogotá",
-          "2",
-          "ldiazr@cremil.gov.co.invalid",
-          null,
-        ],
-        [
-          "30",
-          "Diego",
-          "Sandoval",
-          null,
-          null,
-          "dfsandoval@falabella.com.co.invalid",
-          null,
-        ],
-        [
-          "31",
-          "William",
-          "Tellez",
-          "Bogotá",
-          "2",
-          "gerente.proyectos7@infotic.co.invalid",
-          null,
-        ],
-        ["33", "Andres", "Rivera(provisional)", null, "2", null, null],
-        [
-          "34",
-          "Alejandro",
-          "Aguirre",
-          "Bogotá",
-          "2",
-          "soportecorporativo@usb.edu.co.invalid",
-          null,
-        ],
-        [
-          "36",
-          "Lina",
-          "Currea",
-          "Bogotá",
-          "2",
-          "lina.currea@cuperz.com.invalid",
-          null,
-        ],
-        [
-          "46",
-          "Emerson",
-          "Dominguez",
-          "BOGOTÁ",
-          "2",
-          "dominguezemerson@gmail.com.invalid",
-          null,
-        ],
-        [
-          "47",
-          "Cristhian",
-          "Alarcon",
-          "BOGOTÁ",
-          "2",
-          "cristhian.alarcon@multivacacionesdecameron.com.invalid",
-          null,
-        ],
-        [
-          "48",
-          "Jorge",
-          "Jaimes",
-          "Bogotá",
-          "2",
-          "jljaimes@almaviva.com.co.invalid",
-          null,
-        ],
-        [
-          "51",
-          "Luis",
-          "Valencia",
-          "Bogotá",
-          "2",
-          "luis.valencia@dnbc.gov.co.invalid",
-          null,
-        ],
-        [
-          "52",
-          "Angela",
-          "Talero",
-          "Bogotá",
-          "2",
-          "angela.talero@revistadiners.com.co.invalid",
-          null,
-        ],
-        [
-          "53",
-          "Luis Eduardo",
-          "Sáenz Cifuentes",
-          "Bogotá",
-          "2",
-          "lsaenz@fundaciongruposocial.co.invalid",
-          null,
-        ],
-        [
-          "54",
-          "Oscar",
-          "Rocha",
-          "Bogotá",
-          "2",
-          "orocha@globalseguros.co.invalid",
-          null,
-        ],
-        [
-          "57",
-          "Kira Elvira",
-          "Angulo Arias",
-          "Bogotá",
-          "2",
-          "kira.angulo@entelgy.com.invalid",
-          null,
-        ],
-      ];*/
     },
     filtrar() {
       if (
@@ -591,7 +368,6 @@ body {
 
 #caja {
   margin-top: 2%;
-  margin-left: 5%;
 }
 
 .table {
@@ -636,7 +412,7 @@ body {
   height: 100%;
 }
 body {
-  text-align: center;
+
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
@@ -653,8 +429,6 @@ footer {
   color: #fff;
 }
 
-.table-responsive{
 
-}
 
 </style>

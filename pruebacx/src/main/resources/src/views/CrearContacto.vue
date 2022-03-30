@@ -139,20 +139,6 @@
                 </div>
               </div>
               <br />
-              <div class="row">
-                <div class="col-2">
-                  <strong>País:</strong>
-                </div>
-                <div class="col-9">
-                  <input
-                    type="text"
-                    class="form-control"
-                    @change="comprobarFormato"
-                    v-model="pais"
-                  />
-                </div>
-              </div>
-              <br />
 
               <div class="row">
                 <div class="col-2">
@@ -166,7 +152,7 @@
                     @change="comprobarFormato"
                     placeholder="Código Postal "
                     id="codigo"
-                    pattern="[0-9]{6,6}"
+                    pattern="[0-9]{3,6}"
                     v-model="codigo"
                   />
                 </div>
@@ -313,6 +299,7 @@ this.actualizarcontacto(info2, id);
                     title: "Contacto Actualizado!",
                     icon: "success",
                   });
+                  this.$router.push("/consultar-contactos");
                   
           } else {
             console.log("Error");
@@ -320,10 +307,8 @@ this.actualizarcontacto(info2, id);
         })
         .catch((error) => {
           console.log("Error: " + error);
-          swal.fire( {timer: 8000, title:"Conexión Fallida",  type:'info', text:"En este momento no hay conexión con el servidor, sin embargo tenemos la ultima consulta realizada"});
+          swal.fire( {timer: 8000, title:"Conexión Fallida",  type:'info', text:"En este momento no hay conexión con el servidor."});
         });
-
-      //this.$router.push("/consultar-contactos");
     },
 
     comprobarDatos() {
@@ -368,11 +353,10 @@ this.actualizarcontacto(info2, id);
             this.nombre = this.servidorDatos[1];
             this.apellido = this.servidorDatos[2];
             this.correo = this.servidorDatos[5];
-            (this.celular = this.servidorDatos[6]),
-              (this.pais = this.servidorDatos[4]),
-              (this.ciudad = this.servidorDatos[3]),
-              (this.direccion = this.servidorDatos[7]),
-              (this.codigo = this.servidorDatos[8]);
+            (this.celular = (this.servidorDatos[6] === null)? "":this.servidorDatos[6]),
+              (this.ciudad = (this.servidorDatos[3] === null)? "":this.servidorDatos[3]),
+              (this.direccion = (this.servidorDatos[7] === null)? "":this.servidorDatos[7]),
+              (this.codigo = (this.servidorDatos[8] === null)? "":this.servidorDatos[8]);
           }
         })
         .catch((error) => {

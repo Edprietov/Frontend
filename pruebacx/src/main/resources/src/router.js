@@ -1,13 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import CrearContacto from "@/views/CrearContacto";
-import RegistroMascota from "@/views/RegistroMascota";
 import Contacto from "@/views/Contacto";
-import EditarUsuario from "@/views/EditarUsuario";
-import Inicio from "@/views/Inicio";
 import Principal from "@/views/Principal";
 import ConsultarContactos from "@/components/ConsultarContactos";
-import EditarMascota from "@/components/EditarMascota";
 
 
 Vue.use(Router);
@@ -32,12 +28,6 @@ export default new Router({
             component: CrearContacto
         },
         {
-
-            path: "/registro-mascota",
-            name: "registromascota",
-            component: RegistroMascota
-        },
-        {
             path: "/consultar-contactos",
             name: "consultarcontactos",
             component: ConsultarContactos
@@ -46,22 +36,6 @@ export default new Router({
             path: "/contacto",
             name: "contacto",
             component: Contacto
-        },
-        {
-            path: "/editar-usuario",
-            name: "editarusuario",
-            component: EditarUsuario
-        },
-        {
-            path: "/inicio/:id",
-            name: "inicio",
-            component: Inicio,
-
-        },
-        {
-            path: "/editar-mascota",
-            name: "editarmascota",
-            component: EditarMascota
         },
     ]
 })
